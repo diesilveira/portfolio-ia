@@ -5,10 +5,10 @@ date: 2025-01-01
 
 # Acerca de mí
 
-Breve presentación personal, intereses y objetivos para este curso.
+Soy Diego Silveira.
 
 ## Habilidades
 - Lenguajes / herramientas relevantes
 
 ## Contacto
-- Email institucional
+- [Linkedin](https://www.linkedin.com/in/diego-silveira-uy/)
