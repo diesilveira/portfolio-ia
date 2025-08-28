@@ -1,7 +1,7 @@
 site_name: "Portfolio - Fundamentos del Aprendizaje Automático"
 site_description: "Portfolio académico de Diego Silveira - Fundamentos del Aprendizaje Automático - Universidad Católica del Uruguay"
 site_author: "Diego Silveira"
-site_url: "https://diego-silveira-uy.github.io/portfolio-ia"
+site_url: "https://diesilveira.github.io/portfolio-ia/"
 
 theme:
   name: material
@@ -39,7 +39,7 @@ extra:
       link: https://www.linkedin.com/in/diego-silveira-uy/
       name: LinkedIn
     - icon: fontawesome/brands/github
-      link: https://github.com/diego-silveira-uy
+      link: https://github.com/diesilveira
       name: GitHub
 
 plugins:
