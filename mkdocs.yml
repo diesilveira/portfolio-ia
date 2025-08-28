@@ -1,15 +1,54 @@
-site_name: "Portfolio"
+site_name: "Portfolio - Fundamentos del Aprendizaje Automático"
+site_description: "Portfolio académico de Diego Silveira - Fundamentos del Aprendizaje Automático - Universidad Católica del Uruguay"
+site_author: "Diego Silveira"
+site_url: "https://diego-silveira-uy.github.io/portfolio-ia"
+
 theme:
   name: material
   language: es
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
   features:
     - navigation.sections
     - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.select
+# Social links
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/diego-silveira-uy/
+      name: LinkedIn
+    - icon: fontawesome/brands/github
+      link: https://github.com/diego-silveira-uy
+      name: GitHub
+
 plugins:
-  - search
+  - search:
+      lang: es
   - awesome-pages
   - git-revision-date-localized:
       fallback_to_build_date: true
+      locale: es
   - glightbox
 markdown_extensions:
   - admonition

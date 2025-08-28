@@ -1,32 +1,94 @@
 ---
-title: "Plantilla de entrada de portafolio"
+title: "Plantilla para Prácticas de ML"
 date: 2025-01-01
 ---
 
-# Plantilla de entrada de portafolio
+# 🧪 Plantilla para Prácticas de Machine Learning
 
-Completa esta plantilla para cada entrada del portafolio.
+Esta plantilla está diseñada específicamente para documentar las prácticas del curso **"Fundamentos del Aprendizaje Automático"** siguiendo la estructura académica requerida.
 
 ## Contexto
-Breve descripción del tema/actividad.
+Descripción del problema/dataset/técnica a implementar. Incluir:
+- Motivación del problema
+- Descripción del dataset (si aplica)
+- Conexión con conceptos teóricos del curso
 
 ## Objetivos
-- Objetivo específico y medible
+Lista de objetivos específicos y medibles:
+- 🎯 Objetivo técnico principal
+- 📊 Objetivos de análisis/visualización  
+- 🔍 Objetivos de aprendizaje conceptual
+- 💡 Objetivos de implementación práctica
 
-## Actividades (con tiempos estimados)
-- Tarea X — 45 min
+## Investigación/Desarrollo
 
-## Desarrollo
-Resumen de lo realizado, decisiones y resultados intermedios.
+### Análisis Exploratorio (si aplica)
+- Exploración inicial de datos
+- Estadísticas descriptivas
+- Visualizaciones clave
+- Identificación de patrones
+
+### Implementación
+- Preprocesamiento de datos
+- Feature engineering
+- Implementación de algoritmos
+- Configuración de parámetros
+
+### Experimentación
+- Múltiples enfoques probados
+- Comparación de métodos
+- Ajuste de hiperparámetros
 
 ## Evidencias
-- Capturas, enlaces a notebooks/repos, resultados, gráficos
+
+### Código Principal
+```python
+# Ejemplo de snippet de código clave
+def algoritmo_principal():
+    # Implementación
+    pass
+```
+
+### Visualizaciones
+- Gráficos de distribuciones
+- Matrices de confusión
+- Curvas de aprendizaje
+- Visualizaciones de resultados
+
+### Métricas y Resultados
+| Modelo | Accuracy | Precision | Recall | F1-Score |
+|--------|----------|-----------|--------|----------|
+| Baseline | 0.XX | 0.XX | 0.XX | 0.XX |
+| Modelo Final | 0.XX | 0.XX | 0.XX | 0.XX |
 
 ## Reflexión
-- Qué aprendiste, qué mejorarías, próximos pasos
+
+### Hallazgos Principales
+1. **Hallazgo técnico clave**
+2. **Insight sobre los datos**
+3. **Aprendizaje metodológico**
+
+### Desafíos Encontrados
+- Problemas técnicos y cómo se resolvieron
+- Dificultades conceptuales
+- Limitaciones de los datos/métodos
+
+### Comparaciones y Mejoras
+- **Baseline vs Modelo Final**: ¿Qué mejoras se lograron?
+- **Limitaciones identificadas**: ¿Qué no funcionó bien?
+- **Posibles mejoras**: Lista específica de próximas implementaciones
+
+### Próximos Pasos
+- [ ] Mejora específica 1
+- [ ] Experimentar con técnica X
+- [ ] Implementar validación cruzada
+- [ ] Optimizar hiperparámetros
 
 ## Referencias
-- Fuentes consultadas con enlaces relativos cuando corresponda
+- Papers académicos consultados
+- Documentación de librerías utilizadas
+- Recursos del curso
+- Enlaces a datasets
 
 
 ---
