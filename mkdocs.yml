@@ -49,6 +49,8 @@ plugins:
   - git-revision-date-localized:
       fallback_to_build_date: true
       locale: es
+      enable_creation_date: false
+      enabled: !ENV [CI, false]
   - glightbox
 markdown_extensions:
   - admonition

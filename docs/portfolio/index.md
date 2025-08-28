@@ -24,19 +24,19 @@ Documentación completa de las prácticas del curso **"Fundamentos del Aprendiza
   - Comparación de performance
 
 ### 🔧 **Práctica 3: Regresión Lineal**
-- **[Implementación desde Fundamentos](03-regresion-lineal.md)** *(Planificado)*
+- **Implementación desde Fundamentos** *(Planificado)*
   - Matemática detrás de regresión lineal
   - Implementación manual vs librerías
   - Análisis de residuos y métricas
 
 ### ✅ **Práctica 4: Validación de Modelos**
-- **[Cross-validation y Pipelines](04-validacion-modelos.md)** *(Planificado)*
+- **Cross-validation y Pipelines** *(Planificado)*
   - Técnicas de validación cruzada
   - Grid search e hyperparameter tuning
   - Pipelines de ML completos
 
 ### 🎭 **Práctica 5: Clustering y PCA**
-- **[Aprendizaje No Supervisado](05-clustering-pca.md)** *(Planificado)*
+- **Aprendizaje No Supervisado** *(Planificado)*
   - Algoritmos de clustering (K-means, hierarchical)
   - Reducción dimensional con PCA
   - Visualización de clusters
