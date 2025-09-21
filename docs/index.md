@@ -1,9 +1,9 @@
 ---
-title: "Portfolio - Fundamentos del Aprendizaje Automático"
+title: "Diego Silveira - Portfolio IA"
 date: 2025-01-01
 ---
 
-# 🤖 Portfolio - Fundamentos del Aprendizaje Automático
+# 🤖 Diego Silveira - Portfolio IA
 
 <div style="display: flex; align-items: center; margin-bottom: 2rem; gap: 2rem;">
     <div style="flex-shrink: 0;">

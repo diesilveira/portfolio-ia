@@ -3,7 +3,7 @@ title: "Portfolio - Prácticas de ML"
 date: 2025-01-01
 ---
 
-# 🤖 Portfolio - Fundamentos del Aprendizaje Automático
+# 🤖 Diego Silveira - Portfolio IA
 
 Documentación completa de las prácticas del curso **"Fundamentos del Aprendizaje Automático"** - Universidad Católica del Uruguay.
 
