@@ -55,6 +55,10 @@ La **TA4** consistió en implementar técnicas avanzadas de validación cruzada 
 
 **Análisis de estabilidad**: Todos los modelos son **MUY ESTABLES** (std < 0.02)
 
+![Gráficos de Validación Cruzada y Comparación de Modelos](Practica 4 graficas.png)
+
+Los gráficos muestran la distribución de scores y la comparación visual entre los diferentes métodos de validación cruzada y modelos evaluados.
+
 ## Parte 1: Definiciones de Cross-Validation
 
 ### Completa las definiciones:
