@@ -76,7 +76,7 @@ El modelo tiene mejor capacidad para identificar a las personas que no sobrevivi
 
 ### Comparación con baseline: ¿La Regresión Logística obtiene más aciertos?
 
-**¡Sí, significativamente!** La Regresión Logística supera ampliamente al baseline:
+Si, la Regresión Logística supera ampliamente al baseline:
 
 - **Baseline (siempre clase más común)**: 61.45% accuracy
 - **Regresión Logística**: 81.56% accuracy
@@ -106,8 +106,6 @@ En un contexto de emergencia, es más crítico **no identificar a alguien que po
 4. **Patrón socioeconómico**: El modelo captura bien las diferencias de clase y género identificadas en el TA1
 
 ## Conclusiones
-
-El TA2 demostró exitosamente que:
 
 1. **El feature engineering es muy importante**: Las nuevas variables mejoraron significativamente el rendimiento
 2. **La regresión logística supera al baseline**: +20% de accuracy
