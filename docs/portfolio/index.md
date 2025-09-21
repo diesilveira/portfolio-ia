@@ -13,12 +13,12 @@ Documentación completa de las prácticas del curso **"Fundamentos del Aprendiza
 - **[Analisis y Visualizaciones](01-eda-titanic.md)**
 
 
-### 📈 **Práctica 2: Baseline + Regresión Logística**
-- **[Modelos Base y LogReg](02-baseline-logreg.md)** *(Planificado)*
-  - Feature engineering y preprocesamiento
-  - Implementación de modelo baseline
-  - Regresión logística desde fundamentos
-  - Comparación de performance
+### 📈 **TA2 + Práctica 2: Baseline + Regresión Logística**
+- **[TA2 - Modelo Baseline y Regresión Logística](02-baseline-logreg.md)** ✅ *Completado*
+  - Feature engineering y preprocesamiento de datos
+  - Implementación de modelo baseline (DummyClassifier)
+  - Regresión logística con análisis de matriz de confusión
+  - Comparación de performance y análisis de errores
 
 ### 🔧 **Práctica 3: Regresión Lineal**
 - **Implementación desde Fundamentos** *(Planificado)*

@@ -2,6 +2,5 @@ title: Portfolio
 collapse: false
 nav:
   - Inicio: index.md
-  - "UT1 - Práctica 1: EDA Titanic": 01-eda-titanic.md
-  - "UT1 - TA1: Análisis Exploratorio": ../tas/ut1/ta1_resumen.md
-  - "UT1 - Práctica 2: Baseline + LogReg": 02-baseline-logreg.md
+  - "UT1 - TA1: EDA Titanic": 01-eda-titanic.md
+  - "UT1 - TA2: Baseline + LogReg": 02-baseline-logreg.md
