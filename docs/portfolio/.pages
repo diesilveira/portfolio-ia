@@ -6,3 +6,4 @@ nav:
   - "UT1 - TA2: Baseline + LogReg": 02-baseline-logreg.md
   - "UT1 - TA3: Regresión Lineal y Logística": 03-regresion-lineal-logistica.md
   - "UT1 - TA4: Validación y Selección": 04-validacion-seleccion-modelos.md
+  - "UT1 - TA5: Clustering y PCA": 05-clustering-pca-mall-customers.md
