@@ -52,7 +52,7 @@ docs/
 ### Instalación y Ejecución
 ```bash
 # Clonar el repositorio
-git clone https://github.com/diego-silveira-uy/portfolio-ia.git
+git clone https://github.com/diesilveira/portfolio-ia.git
 cd portfolio-ia
 
 # Instalar dependencias
@@ -97,7 +97,7 @@ El sitio se despliega automáticamente a GitHub Pages mediante GitHub Actions:
 ## 📞 Contacto
 
 - **LinkedIn**: [diego-silveira-uy](https://www.linkedin.com/in/diego-silveira-uy/)
-- **GitHub**: [diego-silveira-uy](https://github.com/diego-silveira-uy)
+- **GitHub**: [diesilveira](https://github.com/diesilveira)
 - **Portfolio**: [En línea](https://diego-silveira-uy.github.io/portfolio-ia/)
 
 ---

@@ -20,7 +20,7 @@ date: 2025-01-01
     </div>
     <div style="flex: 1;">
         <h2 style="margin: 0 0 0.5rem 0; font-size: 1.8rem;">¡Hola! Soy <strong>Diego Silveira</strong></h2>
-        <p style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #2196F3; font-weight: 500;">Estudiante de la Universidad Católica del Uruguay</p>
+        <p style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #2196F3; font-weight: 500;">Estudiante de la Universidad Católica del Uruguay | Sr. Software Engineer en Mercado Libre</p>
         <p style="margin: 0 0 1rem 0; color: #666; line-height: 1.5;">Este portfolio documenta mi progreso en el curso <strong>"Fundamentos del Aprendizaje Automático"</strong>, desde conceptos teóricos hasta implementaciones prácticas de algoritmos de Machine Learning.</p>
         
     </div>
@@ -28,7 +28,7 @@ date: 2025-01-01
 
 ## 🎯 ¿Qué encontrarás aquí?
 
-Este portfolio documenta mi evolución en Machine Learning, incluyendo:
+Este portfolio documenta mi evolución en el curso de Machine Learning, incluyendo:
 
 ### 📊 **Machine Learning Clásico**
 - EDA del Titanic - Análisis exploratorio de datos
@@ -37,38 +37,29 @@ Este portfolio documenta mi evolución en Machine Learning, incluyendo:
 - Validación y Selección de Modelos
 - Clustering y PCA
 
-### 📊 **Deep Learning**
+### 📊 **Deep Learning (a futuro)**
 - MLP
 - PyTorch Lightning
 - Optimización y regularización
 
-### 📊 **Computer Vision**
+### 📊 **Computer Vision (a futuro)**
 - CNN + transfer learning
 - Data augmentation
 - Detección de objetos
 - Segmentación
 
-### 📊 **NLP y LLMs**
+### 📊 **NLP y LLMs (a futuro)**
 - Tokenización
 - Transformers
 - Fine‑tuning/LoRA
 - RAG
 - asistentes
 
-### 📊 ** MLOps y Proyecto Final**
+### 📊 **MLOps y Proyecto Final (a futuro)**
 - MLflow
 - Docker
 - CI/CD
 - Despliegue y defensa final
-
-## 🎯 Próximos Pasos (Backlog Personal)
-
-### 📚 Aprendizaje Continuo
-
-- [ ] **Matemáticas**: Repasar álgebra lineal para PCA
-- [ ] **Visualización**: Mejorar gráficos con seaborn/plotly
-- [ ] **Documentación**: Agregar más detalles técnicos a implementaciones
-- [ ] **Papers**: Leer papers fundacionales de ML supervisado/no supervisado
 
 ## 🎓 Filosofía de Aprendizaje
 

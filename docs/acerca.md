@@ -7,7 +7,7 @@ date: 2025-01-01
 
 
 
-¡Hola! Soy **Diego Silveira**, estudiante de la Universidad Católica del Uruguay, apasionado por la tecnología y la inteligencia artificial. Este portfolio documenta mi aprendizaje en el curso **"Fundamentos del Aprendizaje Automático"**, explorando desde conceptos básicos hasta implementaciones prácticas de algoritmos de ML.
+¡Hola! Soy **Diego Silveira**, estudiante de la Universidad Católica del Uruguay, y Sr Software Engineer en MercadoLibre, soy un apasionado por la tecnología y la inteligencia artificial. Este portfolio documenta mi aprendizaje en el curso **"Fundamentos del Aprendizaje Automático"**, explorando desde conceptos básicos hasta implementaciones prácticas de algoritmos de ML.
 
 ## 💻 Habilidades Técnicas
 
@@ -20,7 +20,6 @@ date: 2025-01-01
 - **[Pandas](https://pandas.pydata.org/docs/)** - Manipulación y análisis de datos
 - **[NumPy](https://numpy.org/doc/)** - Computación numérica y álgebra lineal
 - **[Matplotlib](https://matplotlib.org/stable/contents.html)** - Visualización básica de datos
-- **[Seaborn](https://seaborn.pydata.org/)** - Visualización estadística avanzada
 - **[Scikit-learn](https://scikit-learn.org/stable/user_guide.html)** - Algoritmos de ML clásico
 - **[Jupyter Notebooks](https://docs.jupyter.org/en/latest/)** - Entorno de experimentación
 
@@ -36,7 +35,6 @@ Estudiante del curso "Fundamentos del Aprendizaje Automático", enfocado en desa
 ## 📫 Contacto
 
 - 📧 **LinkedIn**: [Contactar por LinkedIn](https://www.linkedin.com/in/diego-silveira-uy/)
-- 🌍 **Ubicación**: Uruguay
 
 ---
 
