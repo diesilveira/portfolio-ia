@@ -9,7 +9,7 @@ Documentación completa de las prácticas del curso **"Fundamentos del Aprendiza
 
 ## 📊 Unidad Temática 1 - Machine Learning Clásico
 
-### Todos los archivos originales de los cuales se hizo el resumen en este portfolio se encuentran en mi Github: [/diesilveira/portfolio-ia/TAs/UT1](https://github.com/diesilveira/portfolio-ia/tree/main/TAs/UT1)
+Todos los archivos originales de los cuales se hizo el resumen en este portfolio se encuentran en mi Github: [/diesilveira/portfolio-ia/TAs/UT1](https://github.com/diesilveira/portfolio-ia/tree/main/TAs/UT1)
 
 ### 🔍 **Práctica 1: EDA del Titanic**
 - **[Analisis y Visualizaciones](01-eda-titanic.md)**
