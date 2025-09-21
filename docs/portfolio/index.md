@@ -9,12 +9,18 @@ Documentación completa de las prácticas del curso **"Fundamentos del Aprendiza
 
 ## 📊 Unidad Temática 1 - Machine Learning Clásico
 
-### 🔍 **Práctica 1: EDA del Titanic**
-- **[Análisis Exploratorio Completo](01-eda-titanic.md)** *(En desarrollo)*
-  - Exploración inicial del dataset
-  - Visualizaciones y estadísticas descriptivas
-  - Identificación de patrones y correlaciones
-  - Hallazgos clave sobre supervivencia
+### 🔍 **TA1 + Práctica 1: EDA del Titanic**
+- **[TA1 - Análisis Exploratorio del Titanic](../tas/ut1/ta1_resumen.md)** ✅ *Completado*
+  - Exploración inicial del dataset y metodología
+  - Análisis de valores faltantes y estrategias de imputación
+  - Identificación de variables más relacionadas con supervivencia
+  - Hipótesis para investigaciones futuras
+
+- **[Práctica 1 - Implementación y Visualizaciones](01-eda-titanic.md)** *(En desarrollo)*
+  - Implementación práctica basada en los hallazgos del TA1
+  - Visualizaciones avanzadas y estadísticas descriptivas
+  - Validación de hipótesis identificadas en el TA1
+  - Código reproducible y documentación técnica
 
 ### 📈 **Práctica 2: Baseline + Regresión Logística**
 - **[Modelos Base y LogReg](02-baseline-logreg.md)** *(Planificado)*
