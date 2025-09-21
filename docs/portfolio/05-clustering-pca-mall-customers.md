@@ -154,7 +154,7 @@ Se compararon cuatro enfoques usando Silhouette Score:
 
 **📊 ¿Forward y Backward seleccionaron exactamente las mismas features?**: Sí, ambos métodos coincidieron en seleccionar: Spending Score (1-100), Genre_Female, y Genre_Male
 
-**🤔 ¿PCA con 2 componentes es competitivo?**: Absolutamente. PCA superó significativamente a Feature Selection (0.686 vs 0.573, +19.7% mejor) y al baseline (0.686 vs 0.364, +88.3% mejor)
+**🤔 ¿PCA con 2 componentes es competitivo?**: PCA superó significativamente a Feature Selection y al baseline.
 
 **🎯 ¿Algún método superó el threshold de 0.5?**: Sí, todos los métodos de reducción dimensional:
 - PCA (2D): 0.686 ✅
@@ -162,7 +162,7 @@ Se compararon cuatro enfoques usando Silhouette Score:
 - Backward Elimination: 0.573 ✅
 - Solo el baseline (0.364) quedó por debajo
 
-**📈 ¿La reducción de dimensionalidad mejoró el clustering?**: Dramáticamente. La reducción de 5D a 2D/3D mejoró el clustering en todos los casos, siendo PCA el más efectivo al capturar la estructura subyacente de los datos sin ruido.
+**📈 ¿La reducción de dimensionalidad mejoró el clustering?**: La reducción de 5D a 2D/3D mejoró el clustering en todos los casos, siendo PCA el más efectivo.
 
 ## Clustering con K-Means
 
@@ -174,7 +174,7 @@ Se compararon cuatro enfoques usando Silhouette Score:
 |---|---------|------------------|
 | 2 | 18.62   | 0.762           |
 | 3 | 10.93   | 0.742           |
-| 4 | 3.78    | **0.686**       |
+| 4 | 3.78    | 0.686       |
 | 5 | 2.78    | 0.656           |
 | 6 | 1.89    | 0.619           |
 
@@ -195,7 +195,7 @@ Se compararon cuatro enfoques usando Silhouette Score:
 
 ## Perfiles de Clientes por Cluster
 
-### 🏷️ Cluster 0: "Mujeres Jóvenes Gastadoras" (57 clientes, 28.5%)
+### 🏷️ Cluster 0: "Mujeres Jóvenes que gastan" (57 clientes, 28.5%)
 
 **Perfil Demográfico:**
 - Edad promedio: 28.4 años
@@ -205,9 +205,8 @@ Se compararon cuatro enfoques usando Silhouette Score:
 - Ingreso anual: $59.7k
 - Spending Score: 67.7/100
 
-**Estrategia de marketing**: Productos premium, tendencias de moda, experiencias personalizadas
 
-### 🏷️ Cluster 1: "Hombres Maduros Conservadores" (47 clientes, 23.5%)
+### 🏷️ Cluster 1: "Hombres adultos Conservadores" (47 clientes, 23.5%)
 
 **Perfil Demográfico:**
 - Edad promedio: 50.1 años  
@@ -217,9 +216,8 @@ Se compararon cuatro enfoques usando Silhouette Score:
 - Ingreso anual: $62.2k
 - Spending Score: 29.6/100
 
-**Estrategia de marketing**: Productos funcionales, ofertas de valor, comunicación directa
 
-### 🏷️ Cluster 2: "Mujeres Maduras Cautelosas" (55 clientes, 27.5%)
+### 🏷️ Cluster 2: "Mujeres adultas Conservadoras" (55 clientes, 27.5%)
 
 **Perfil Demográfico:**
 - Edad promedio: 48.1 años
@@ -229,9 +227,7 @@ Se compararon cuatro enfoques usando Silhouette Score:
 - Ingreso anual: $58.8k
 - Spending Score: 34.8/100
 
-**Estrategia de marketing**: Productos de calidad, promociones familiares, programas de lealtad
-
-### 🏷️ Cluster 3: "Hombres Jóvenes Gastadores" (41 clientes, 20.5%)
+### 🏷️ Cluster 3: "Hombres Jóvenes que gastan" (41 clientes, 20.5%)
 
 **Perfil Demográfico:**
 - Edad promedio: 28.0 años
@@ -241,7 +237,6 @@ Se compararon cuatro enfoques usando Silhouette Score:
 - Ingreso anual: $62.3k
 - Spending Score: 70.2/100
 
-**Estrategia de marketing**: Tecnología, deportes, productos de lifestyle, marketing digital
 
 ## Análisis de Calidad del Clustering
 
@@ -351,17 +346,16 @@ El contexto de **segmentación de clientes de mall** fue crucial para:
 
 **Sí, perfectamente.** Los 4 clusters reflejan arquetipos conocidos en retail:
 
-1. **Mujeres jóvenes gastadoras**: El segmento más valioso (alta propensión al gasto)
-2. **Hombres maduros conservadores**: Compradores racionales y selectivos  
-3. **Mujeres maduras cautelosas**: Consumidoras familiares conscientes del precio
-4. **Hombres jóvenes gastadores**: Segmento premium masculino 
+1. Mujeres jóvenes que gastan
+2. Hombres adultos conservadores
+3. Mujeres adultas conservadoras
+4. Hombres jóvenes que gastan
 
-Esta segmentación es **intuitiva y accionable** para equipos de marketing y operaciones.
 
 **¿Qué harías diferente si fueras a repetir el análisis?**
 
 1. **Más variables**: Incluiría datos de comportamiento (frecuencia de visita, categorías preferidas, estacionalidad)
-2. **Análisis de transición**: Estudiaría cómo clientes migran entre clusters a lo largo del tiempo
+2. **Análisis de transición**: Estudiaría cómo clientes cambian entre clusters a lo largo del tiempo
 
 
 ### 💼 Aplicación Práctica
