@@ -26,7 +26,7 @@ Documentación completa de las prácticas del curso **"Fundamentos del Aprendiza
 - **[Validación y Selección de Modelos](04-validacion-seleccion-modelos.md)**
 
 
-### 🎭 **Práctica 5: Clustering y PCA - Mall Customer Segmentation**
+### 🎭 **Práctica 5: Clustering y PCA**
 - **[Clustering y PCA - Mall Customer Segmentation](05-clustering-pca-mall-customers.md)**
 
 
