@@ -13,18 +13,16 @@ Documentación completa de las prácticas del curso **"Fundamentos del Aprendiza
 - **[Analisis y Visualizaciones](01-eda-titanic.md)**
 
 
-### 📈 **TA2 + Práctica 2: Baseline + Regresión Logística**
-- **[TA2 - Modelo Baseline y Regresión Logística](02-baseline-logreg.md)** 
+### 📈 **Práctica 2: Baseline + Regresión Logística**
+- **[Modelo Baseline y Regresión Logística](02-baseline-logreg.md)** 
 
-### 🔧 **TA3 + Práctica 3: Regresión Lineal y Logística**
-- **[TA3 - Regresión Lineal y Logística](03-regresion-lineal-logistica.md)**
+### 🔧 **Práctica 3: Regresión Lineal y Logística**
+- **[Regresión Lineal y Logística](03-regresion-lineal-logistica.md)**
 
 
-### ✅ **Práctica 4: Validación de Modelos**
-- **Cross-validation y Pipelines** *(Planificado)*
-  - Técnicas de validación cruzada
-  - Grid search e hyperparameter tuning
-  - Pipelines de ML completos
+### ✅ **Práctica 4: Validación y Selección de Modelos**
+- **[Validación y Selección de Modelos](04-validacion-seleccion-modelos.md)**
+
 
 ### 🎭 **Práctica 5: Clustering y PCA**
 - **Aprendizaje No Supervisado** *(Planificado)*
