@@ -2,9 +2,6 @@
 title: "Diego Silveira - Portfolio IA"
 date: 2025-01-01
 ---
-
-# 🤖 Diego Silveira - Portfolio IA
-
 <div style="display: flex; align-items: center; margin-bottom: 2rem; gap: 2rem;">
     <div style="flex-shrink: 0;">
         <img src="assets/foto_de_perfil.jpeg" alt="Diego Silveira" style="
