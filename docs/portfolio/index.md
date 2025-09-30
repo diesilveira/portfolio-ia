@@ -11,23 +11,23 @@ Documentación completa de las prácticas del curso **"Fundamentos del Aprendiza
 
 Todos los archivos originales de los cuales se hizo el resumen en este portfolio se encuentran en mi Github: [/diesilveira/portfolio-ia/TAs/UT1](https://github.com/diesilveira/portfolio-ia/tree/main/TAs/UT1)
 
-### 🔍 **Práctica 1: EDA del Titanic**
-- **[Analisis y Visualizaciones](01-eda-titanic.md)**
+### 🔍 **Titanic: Análisis exploratorio de datos para descubrir patrones de supervivencia**
+- **[Descifrando los secretos del Titanic a través de los datos](01-eda-titanic.md)**
 
 
-### 📈 **Práctica 2: Baseline + Regresión Logística**
-- **[Modelo Baseline y Regresión Logística](02-baseline-logreg.md)** 
+### 📈 **Cómo mejorar predicciones en Titanic con ingeniería de características**
+- **[De datos crudos a modelos predictivos: construyendo nuestro primer clasificador](02-baseline-logreg.md)** 
 
-### 🔧 **Práctica 3: Regresión Lineal y Logística**
-- **[Regresión Lineal y Logística](03-regresion-lineal-logistica.md)**
-
-
-### ✅ **Práctica 4: Validación y Selección de Modelos**
-- **[Validación y Selección de Modelos](04-validacion-seleccion-modelos.md)**
+### 🔧 **Dominando la regresión: del problema lineal a la clasificación logística**
+- **[Cuando las líneas rectas no bastan: explorando regresión lineal y logística](03-regresion-lineal-logistica.md)**
 
 
-### 🎭 **Práctica 5: Clustering y PCA**
-- **[Clustering y PCA - Mall Customer Segmentation](05-clustering-pca-mall-customers.md)**
+### ✅ **El arte de elegir el mejor modelo: validación cruzada en acción**
+- **[Evitando el sobreajuste: técnicas de validación para modelos robustos](04-validacion-seleccion-modelos.md)**
+
+
+### 🎭 **Segmentación de clientes: descubriendo patrones ocultos con clustering**
+- **[Mall Customer Analytics: usando PCA y clustering para entender comportamiento de compra](05-clustering-pca-mall-customers.md)**
 
 
 ---
