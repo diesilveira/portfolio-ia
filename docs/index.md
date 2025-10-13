@@ -34,9 +34,9 @@ Este portfolio documenta mi evolución en el curso de Machine Learning, incluyen
 - Validación y Selección de Modelos
 - Clustering y PCA
 
-### 📊 **Deep Learning (a futuro)**
-- MLP
-- PyTorch Lightning
+### 🧠 **Deep Learning**
+- Redes Neuronales: Perceptrón y MLP
+- PyTorch Lightning 
 - Optimización y regularización
 
 ### 📊 **Computer Vision (a futuro)**

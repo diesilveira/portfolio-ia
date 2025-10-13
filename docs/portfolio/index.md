@@ -30,6 +30,14 @@ Todos los archivos originales de los cuales se hizo el resumen en este portfolio
 - **[Mall Customer Analytics: usando PCA y clustering para entender comportamiento de compra](05-clustering-pca-mall-customers.md)**
 
 
+## 🧠 Unidad Temática 2 - Redes Neuronales y Deep Learning
+
+Todos los archivos originales de los cuales se hizo el resumen en este portfolio se encuentran en mi Github: [/diesilveira/portfolio-ia/TAs/UT2](https://github.com/diesilveira/portfolio-ia/tree/main/TAs/UT2)
+
+### 🔗 **Redes Neuronales: del perceptrón simple al MLP**
+- **[Del perceptrón a las redes multicapa: resolviendo problemas no linealmente separables](06-redes-neuronales-perceptron.md)**
+
+
 ---
 
 *"Cada proyecto es una oportunidad de aprender algo nuevo y crear algo valioso"*
