@@ -50,6 +50,10 @@ Todos los archivos originales de los cuales se hizo el resumen en este portfolio
 - **[CNNs desde cero y aprovechando modelos preentrenados](09-cnn-transfer-learning.md)**
 
 
+### 🎨 **Data Augmentation Avanzado & Explicabilidad: mejorando modelos con datos sintéticos**
+- **[Técnicas avanzadas de augmentation (Mixup, CutMix) y visualización de decisiones con GradCAM](10-data-augmentation-xai.md)**
+
+
 ---
 
 *"Cada proyecto es una oportunidad de aprender algo nuevo y crear algo valioso"*
