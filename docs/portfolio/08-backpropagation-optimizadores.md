@@ -2,7 +2,7 @@
 
 ## Resumen de la Tarea
 
-La **TA8** se centró en la experimentación sistemática con redes neuronales profundas, explorando diferentes arquitecturas, optimizadores y técnicas de regularización. El objetivo principal fue comprender cómo diferentes hiperparámetros y técnicas afectan el rendimiento del modelo, realizando más de 25 experimentos controlados en el dataset CIFAR-10.
+Esta tarea se centró en la experimentación sistemática con redes neuronales profundas, explorando diferentes arquitecturas, optimizadores y técnicas de regularización. El objetivo principal fue comprender cómo diferentes hiperparámetros y técnicas afectan el rendimiento del modelo, realizando más de 25 experimentos controlados en el dataset CIFAR-10.
 
 ### Metodología
 
@@ -293,7 +293,7 @@ La combinación de EarlyStopping + ReduceLROnPlateau + ModelCheckpoint logró el
 
 ### 4. El Problema Fundamental: MLPs no son para Imágenes
 
-A pesar de los experimentos  y la aplicación de varias prácticas de deep learning, nuestro mejor modelo alcanzó solo **56.2% de test accuracy** con un **gap de overfitting de 18.2%** (74.4% train vs 56.2% test). Este resultado limitado no es casualidad, sino una **limitación fundamental de las redes densas (MLPs) para procesar imágenes**.
+A pesar de los experimentos  y la aplicación de varias prácticas de deep learning, nuestro mejor modelo alcanzó solo **56.2% de test accuracy** con un **gap de overfitting de 18.2%** (74.4% train vs 56.2% test). Este resultado es una **limitación fundamental de las redes densas (MLPs) para procesar imágenes**.
 
 **¿Por qué las MLPs fallan en imágenes?**
 
@@ -305,25 +305,9 @@ A pesar de los experimentos  y la aplicación de varias prácticas de deep learn
 
 4. **No captura jerarquías visuales**: Las imágenes tienen estructura jerárquica (bordes → texturas → partes → objetos), pero las MLPs tratan todos los píxeles como independientes.
 
-### 5. El Camino Correcto: CNNs y Transfer Learning
+### 5. Reflexión Final
 
-Los resultados de este experimento nos enseñan una lección valiosa: **usar la herramienta correcta para el problema correcto**. Para visión por computadora, las **Convolutional Neural Networks (CNNs)** son la arquitectura apropiada porque:
-
-- **Preservan estructura espacial**: Las convoluciones operan sobre regiones locales de la imagen
-- **Invarianza traslacional**: Los mismos filtros se aplican en todas las posiciones
-- **Compartición de parámetros**: Menos parámetros que MLPs, reduciendo overfitting
-- **Jerarquía de características**: Capas tempranas detectan bordes, capas profundas detectan objetos
-
-Más importante aún, **Transfer Learning** permite aprovechar modelos pre-entrenados en millones de imágenes (como ImageNet), logrando resultados superiores con menos datos y tiempo de entrenamiento.
-
-**Comparación esperada**:
-- **Nuestro mejor MLP**: 56.2% test accuracy, 830K parámetros
-- **CNN simple**: ~70-75% test accuracy esperado
-- **CNN con Transfer Learning**: ~85-95% test accuracy esperado
-
-### 6. Reflexión Final
-
-Este ejercicio de experimentación sistemática fue invaluable no por los resultados obtenidos, sino por las **lecciones aprendidas sobre el proceso de deep learning**:
+Este ejercicio de experimentación estuvo muy bueno y completo por las lecciones aprendidas sobre el proceso de deep learning:
 
 ✅ **Aprendimos a experimentar sistemáticamente**: Cambiar una variable a la vez, documentar resultados, comparar métricas
 
@@ -331,6 +315,3 @@ Este ejercicio de experimentación sistemática fue invaluable no por los result
 
 ✅ **Entendimos las limitaciones**: Saber cuándo una arquitectura no es apropiada es tan importante como saber cuándo sí lo es
 
-✅ **Preparamos el terreno para CNNs**: Ahora que entendemos los fundamentos, estamos listos para arquitecturas más avanzadas
-
-Los 56.2% de accuracy no son un fracaso, sino una **demostración empírica** de por qué la comunidad de deep learning desarrolló arquitecturas especializadas. En la siguiente unidad, veremos cómo las CNNs y Transfer Learning resuelven estos problemas, logrando resultados state-of-the-art en Computer Vision.
