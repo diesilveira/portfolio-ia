@@ -42,6 +42,14 @@ Todos los archivos originales de los cuales se hizo el resumen en este portfolio
 - **[Experimentacion con redes neuronales: arquitecturas, optimizadores y callbacks](08-backpropagation-optimizadores.md)**
 
 
+## 👁️ Unidad Temática 3 - Visión por Computadora
+
+Todos los archivos originales de los cuales se hizo el resumen en este portfolio se encuentran en mi Github: [/diesilveira/portfolio-ia/TAs/UT3](https://github.com/diesilveira/portfolio-ia/tree/main/TAs/UT3)
+
+### 🖼️ **CNNs y Transfer Learning: de redes convolucionales a modelos preentrenados**
+- **[CNNs desde cero y aprovechando modelos preentrenados](09-cnn-transfer-learning.md)**
+
+
 ---
 
 *"Cada proyecto es una oportunidad de aprender algo nuevo y crear algo valioso"*

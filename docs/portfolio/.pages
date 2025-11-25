@@ -7,3 +7,6 @@ nav:
   - "UT1 - TA3: Regresión Lineal y Logística": 03-regresion-lineal-logistica.md
   - "UT1 - TA4: Validación y Selección": 04-validacion-seleccion-modelos.md
   - "UT1 - TA5: Clustering y PCA": 05-clustering-pca-mall-customers.md
+  - "UT2 - TA7: Redes Neuronales y Perceptrón": 06-redes-neuronales-perceptron.md
+  - "UT2 - TA8: Backpropagation y Optimizadores": 08-backpropagation-optimizadores.md
+  - "UT3 - TA9: CNNs y Transfer Learning": 09-cnn-transfer-learning.md
