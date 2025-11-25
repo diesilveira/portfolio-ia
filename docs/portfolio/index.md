@@ -38,6 +38,10 @@ Todos los archivos originales de los cuales se hizo el resumen en este portfolio
 - **[Del perceptrón a las redes multicapa: resolviendo problemas no linealmente separables](06-redes-neuronales-perceptron.md)**
 
 
+### ⚙️ **Backpropagation y Optimizadores: experimentación sistemática en Deep Learning**
+- **[Dominando el arte de entrenar redes neuronales: arquitecturas, optimizadores y callbacks](08-backpropagation-optimizadores.md)**
+
+
 ---
 
 *"Cada proyecto es una oportunidad de aprender algo nuevo y crear algo valioso"*
