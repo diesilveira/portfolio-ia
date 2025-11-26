@@ -28,7 +28,6 @@ SAM es un modelo general entrenado en SA-1B (11M imágenes, 1.1B máscaras), per
 #### Estadísticas del Dataset
 
 **Observaciones**:
-
 - Dataset balanceado en términos de píxeles (43% agua vs 57% tierra)
 - Gran variabilidad en tamaños de imagen
 - Contextos diversos: urbano, rural, ríos, inundaciones costeras
@@ -40,19 +39,22 @@ SAM es un modelo general entrenado en SA-1B (11M imágenes, 1.1B máscaras), per
 #### Arquitectura de SAM
 
 **Componentes principales**:
+
 - **Image Encoder**: ViT-B (Vision Transformer Base) - 93.7M parámetros
 - **Prompt Encoder**: Procesa points, boxes o masks como input
 - **Mask Decoder**: Genera máscaras de segmentación - 4.1M parámetros
 
-**Tipos de prompts evaluados**:
+#### Tipos de prompts evaluados
 
-1. **Point Prompts**: Un punto (x, y) + label (foreground/background)
-   - Ventaja: Mínima interacción humana
-   - Desventaja: Ambiguo en regiones complejas
+**1. Point Prompts**: Un punto (x, y) + label (foreground/background)
 
-2. **Box Prompts**: Bounding box [x1, y1, x2, y2]
-   - Ventaja: Menos ambigüedad, mejor contexto
-   - Desventaja: Requiere más información previa
+- Ventaja: Mínima interacción humana
+- Desventaja: Ambiguo en regiones complejas
+
+**2. Box Prompts**: Bounding box [x1, y1, x2, y2]
+
+- Ventaja: Menos ambigüedad, mejor contexto
+- Desventaja: Requiere más información previa
 
 #### Resultados Zero-shot
 
