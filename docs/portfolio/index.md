@@ -54,6 +54,10 @@ Todos los archivos originales de los cuales se hizo el resumen en este portfolio
 - **[Técnicas avanzadas de augmentation (Mixup, CutMix) y visualización de decisiones con GradCAM](10-data-augmentation-xai.md)**
 
 
+### 🎯 **YOLO Fine-tuning y Object Tracking: detección de productos en retail**
+- **[Fine-tuning de YOLOv8 para detección específica de productos y tracking en video](11-yolo-finetuning-tracking.md)**
+
+
 ---
 
 *"Cada proyecto es una oportunidad de aprender algo nuevo y crear algo valioso"*
