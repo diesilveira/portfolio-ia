@@ -6,17 +6,19 @@ Esta tarea consistió en implementar y comparar dos tipos  de modelos de machine
 
 ### Metodología
 
-1. **Regresión Lineal - Dataset Boston Housing**:
-   - Predicción de precios de viviendas (variable continua)
-   - Preprocesamiento con imputación de valores faltantes
-   - Evaluación con métricas de regresión (MAE, RMSE)
-   - Análisis de importancia de características
+#### Regresión Lineal - Dataset Boston Housing
 
-2. **Regresión Logística - Dataset Breast Cancer**:
-   - Clasificación binaria: tumor benigno vs maligno
-   - División estratificada para mantener proporción de clases
-   - Evaluación con métricas de clasificación (Accuracy, Precision, Recall, F1)
-   - Análisis de matriz de confusión
+- Predicción de precios de viviendas (variable continua)
+- Preprocesamiento con imputación de valores faltantes
+- Evaluación con métricas de regresión (MAE, RMSE)
+- Análisis de importancia de características
+
+#### Regresión Logística - Dataset Breast Cancer
+
+- Clasificación binaria: tumor benigno vs maligno
+- División estratificada para mantener proporción de clases
+- Evaluación con métricas de clasificación (Accuracy, Precision, Recall, F1)
+- Análisis de matriz de confusión
 
 ### Datasets Utilizados
 
