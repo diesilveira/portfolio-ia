@@ -21,11 +21,13 @@ Esta tarea consistió en implementar y comparar dos tipos  de modelos de machine
 ### Datasets Utilizados
 
 **🏠 Boston Housing (Regresión)**
+
 - **Tamaño**: 506 registros con 13 características
 - **Target**: Precios de viviendas ($5.0k - $50.0k)
 - **Problema**: Predicción de valores continuos
 
 **🏥 Breast Cancer (Clasificación)**
+
 - **Tamaño**: 569 pacientes con 30 características
 - **Target**: Diagnóstico binario (212 malignos, 357 benignos)
 - **Problema**: Clasificación binaria
@@ -35,10 +37,12 @@ Esta tarea consistió en implementar y comparar dos tipos  de modelos de machine
 ### Regresión Lineal - Boston Housing
 
 **Métricas de Rendimiento:**
+
 - **MAE**: $3.02k (error promedio absoluto)
 - **RMSE**: $4.76k (error cuadrático medio)
 
 **Variables más importantes:**
+
 1. **NOX** (-16.75): Nivel de óxidos nitrosos (negativo = a mayor contaminación, menor precio)
 2. **RM** (+4.11): Número de habitaciones (positivo = más habitaciones, mayor precio)
 3. **CHAS** (+3.05): Proximidad al río Charles (positivo = cerca del río, mayor precio)
@@ -46,6 +50,7 @@ Esta tarea consistió en implementar y comparar dos tipos  de modelos de machine
 ### Regresión Logística - Breast Cancer
 
 **Métricas de Rendimiento:**
+
 - **Accuracy**: 95.6%
 - **Precision**: 94.6% (de los predichos como benignos, 94.6% lo son realmente)
 - **Recall**: 98.6% (de todos los benignos reales, detectamos 98.6%)
@@ -71,7 +76,8 @@ Benigno      1     70
 
 **MAPE**: Error porcentual promedio, útil para comparar modelos con diferentes **escalas**.
 
-### Interpretación en el TA3:
+### Interpretación en el TA3
+
 - **MAE = $3.02k**: En promedio, nuestras predicciones se alejan $3,020 del precio real
 - **RMSE = $4.76k**: La raíz del error cuadrático medio es $4,760, penalizando más los errores grandes
 - El RMSE > MAE indica que hay algunos errores grandes que afectan más la métrica cuadrática
@@ -106,15 +112,7 @@ Usaría **Regresión Logística** porque la clasificación de emails es un probl
 
 ### ¿Por qué es importante separar datos de entrenamiento y prueba?
 
-Para **evitar el sobreajuste (overfitting)** y obtener una evaluación honesta del modelo. Si evaluáramos el modelo con los mismos datos que usamos para entrenarlo, obtendríamos una medida artificialmente optimista del rendimiento - como si un estudiante se evaluara con las mismas preguntas que estudió.
-
-**Razones específicas:**
-- **Validación independiente**: Los datos de prueba actúan como un "examen final" que el modelo nunca ha visto
-- **Detección de overfitting**: Si el modelo funciona bien en entrenamiento pero mal en prueba, está memorizando en lugar de generalizar
-- **Estimación realista**: El rendimiento en datos de prueba nos dice cómo se comportará el modelo con datos nuevos en producción
-- **Selección de modelos**: Podemos comparar diferentes modelos usando la misma métrica en el mismo conjunto de prueba
-
-En el TA3, usamos 80% para entrenamiento y 20% para prueba, asegurándonos de que nuestras métricas (MAE, RMSE, Accuracy, etc.) reflejen el verdadero poder predictivo de los modelos.
+Separamos los datos para evitar el sobreajuste (overfitting) y obtener una evaluación honesta del modelo. Si evaluáramos el modelo con los mismos datos que usamos para entrenarlo, obtendríamos una medida artificialmente optimista del rendimiento, como si un estudiante se evaluara con las mismas preguntas que estudió. Los datos de prueba actúan como un "examen final" que el modelo nunca ha visto, permitiendo validación independiente. Si el modelo funciona bien en entrenamiento pero mal en prueba, está memorizando en lugar de generalizar, lo que nos permite detectar overfitting. El rendimiento en datos de prueba nos dice cómo se comportará el modelo con datos nuevos en producción, proporcionando una estimación realista, y además podemos comparar diferentes modelos usando la misma métrica en el mismo conjunto de prueba. En el TA3, usamos 80% para entrenamiento y 20% para prueba, asegurándonos de que nuestras métricas (MAE, RMSE, Accuracy, etc.) reflejen el verdadero poder predictivo de los modelos.
 
 ## Conclusiones
 
@@ -123,4 +121,4 @@ En el TA3, usamos 80% para entrenamiento y 20% para prueba, asegurándonos de qu
 3. **Importancia de la validación**: La separación train/test es crucial para evaluaciones honestas
 4. **Aplicación práctica**: Ambos modelos lograron excelente rendimiento en sus respectivos dominios
 
-Los resultados confirman que elegir el modelo correcto según la naturaleza del problema es fundamental para el éxito en machine learning.
+Los resultados confirman que elegir el modelo correcto según la naturaleza del problema es fundamental para el éxito en machine learning, y que una validación rigurosa mediante separación de datos permite evaluar de manera realista cómo se comportarán los modelos con datos nuevos en producción.
