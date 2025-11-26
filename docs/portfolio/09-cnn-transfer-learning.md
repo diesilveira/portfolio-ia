@@ -13,64 +13,17 @@ Esta tarea exploró el mundo de las **Redes Neuronales Convolucionales (CNNs)** 
 5. **Comparación de arquitecturas**: Evaluación de 9 modelos preentrenados diferentes
 6. **Análisis de overfitting**: Comparación de gaps entre train y validation accuracy
 
-
 ## Implementación y Resultados
 
 ### Dataset: CIFAR-10
 
-```python
-# Cargar y preparar dataset
-(x_train, y_train), (x_test, y_test) = keras.datasets.cifar10.load_data()
-
-# Normalización a [0, 1]
-x_train = x_train.astype('float32') / 255.0
-x_test = x_test.astype('float32') / 255.0
-
-# One-hot encoding
-y_train = keras.utils.to_categorical(y_train, 10)
-y_test = keras.utils.to_categorical(y_test, 10)
-```
-
-**Características del dataset**:
-- 50,000 imágenes de entrenamiento
-- 10,000 imágenes de test
-- Dimensiones: 32×32×3 (RGB)
-- 10 clases: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
+**Características del dataset**: CIFAR-10 contiene 50,000 imágenes de entrenamiento y 10,000 de test, todas con dimensiones de 32×32 píxeles en RGB. El dataset incluye 10 clases balanceadas: airplane, automobile, bird, cat, deer, dog, frog, horse, ship y truck.
 
 ### Parte 1: CNN Simple desde Cero
 
 #### Arquitectura
 
-```python
-def create_simple_cnn(input_shape=(32, 32, 3), num_classes=10):
-    model = keras.Sequential([
-        # Bloque convolucional 1
-        layers.Conv2D(32, (3, 3), padding='same', input_shape=input_shape),
-        layers.Activation('relu'),
-        layers.MaxPooling2D((2, 2)),
-        
-        # Bloque convolucional 2
-        layers.Conv2D(64, (3, 3), padding='same'),
-        layers.Activation('relu'),
-        layers.MaxPooling2D((2, 2)),
-        
-        # Clasificador
-        layers.Flatten(),
-        layers.Dense(512, activation='relu'),
-        layers.Dense(num_classes, activation='softmax')
-    ])
-    
-    return model
-```
-
-**Características de la arquitectura**:
-- **Primera capa convolucional**: 32 filtros de 3×3 → detecta patrones básicos (bordes, colores)
-- **MaxPooling**: Reduce dimensiones de 32×32 → 16×16
-- **Segunda capa convolucional**: 64 filtros de 3×3 → detecta patrones más complejos
-- **MaxPooling**: Reduce dimensiones de 16×16 → 8×8
-- **Flatten**: Convierte matriz 8×8×64 en vector de 4,096 elementos
-- **Dense**: Capa de clasificación con 512 neuronas
-- **Parámetros totales**: 2,122,186
+**Características de la arquitectura**: La primera capa convolucional utiliza 32 filtros de 3×3 para detectar patrones básicos como bordes y colores, seguida de MaxPooling que reduce las dimensiones de 32×32 a 16×16. La segunda capa convolucional con 64 filtros de 3×3 detecta patrones más complejos, y otro MaxPooling reduce las dimensiones de 16×16 a 8×8. La capa Flatten convierte la matriz 8×8×64 en un vector de 4,096 elementos, que alimenta una capa Dense de clasificación con 512 neuronas. El modelo resultante tiene 2,122,186 parámetros totales entrenables.
 
 #### Resultados CNN Simple
 
@@ -83,11 +36,7 @@ def create_simple_cnn(input_shape=(32, 32, 3), num_classes=10):
 | **Parámetros** | 2,122,186 |
 | **Épocas entrenadas** | 9/10 (EarlyStopping) |
 
-**Observaciones**:
-- ✅ **Mejora significativa**: La CNN alcanzó 69.37% vs 56.2% del mejor MLP (TA8)
-- ⚠️ **Overfitting moderado**: Gap de 17.4% entre train y validation
-- ✅ **Convergencia rápida**: Alcanzó buen rendimiento en solo 9 épocas
-- 📊 **Por clase**: Mejor en ship (88%), automobile (87%), frog (84%); peor en cat (47%), deer (75%)
+La CNN alcanzó una mejora significativa con 69.37% de accuracy frente al 56.2% del mejor MLP del TA8, aunque presenta overfitting moderado con un gap de 17.4% entre train y validation. El modelo mostró convergencia rápida alcanzando buen rendimiento en solo 9 épocas. Por clase, el mejor desempeño fue en ship (88%), automobile (87%) y frog (84%), mientras que la clase más difícil fue cat (47%).
 
 ![Comparación de precisión entre CNN Simple y Transfer Learning](09-imagenes/cnn-vs-transfer-learning.png)
 
@@ -97,37 +46,9 @@ def create_simple_cnn(input_shape=(32, 32, 3), num_classes=10):
 
 #### ¿Qué es Transfer Learning?
 
-Transfer Learning es una técnica donde utilizamos un modelo preentrenado en un dataset grande (como ImageNet con 1.4M imágenes) y lo adaptamos a nuestro problema específico. Es como contratar a un experto en visión general y enseñarle a reconocer nuestras clases específicas.
-
-**Ventajas**:
-- ⚡ Entrenamiento más rápido
-- 📊 Mejor rendimiento con menos datos
-- 🧠 Aprovecha conocimiento previo de patrones visuales
-- 💾 Menos parámetros a entrenar
+Transfer Learning utiliza un modelo preentrenado en un dataset grande (como ImageNet con 1.4M imágenes) y lo adapta a nuestro problema específico. Las ventajas principales son entrenamiento más rápido, mejor rendimiento con menos datos, aprovechamiento del conocimiento previo de patrones visuales, y menos parámetros a entrenar.
 
 #### Arquitectura Transfer Learning
-
-```python
-def create_transfer_model(input_shape=(32, 32, 3), num_classes=10):
-    # Modelo base preentrenado
-    base_model = applications.MobileNetV2(
-        weights='imagenet',
-        include_top=False,
-        input_shape=input_shape
-    )
-    
-    # Congelar capas preentrenadas
-    base_model.trainable = False
-    
-    # Agregar clasificador personalizado
-    model = keras.Sequential([
-        base_model,
-        layers.Flatten(),
-        layers.Dense(num_classes, activation='softmax')
-    ])
-    
-    return model
-```
 
 **Características**:
 - **Base model**: MobileNetV2 preentrenado en ImageNet
@@ -145,43 +66,11 @@ def create_transfer_model(input_shape=(32, 32, 3), num_classes=10):
 | **Overfitting Gap** | 40.7% |
 | **Parámetros entrenables** | 12,810 |
 
-**Observaciones**:
-- ❌ **Peor que CNN simple**: 51.09% vs 69.37%
-- ⚠️ **Overfitting severo**: Gap de 40.7% (el doble que CNN simple)
-- 🤔 **Problema**: El modelo base está congelado y no se adapta bien a CIFAR-10
-- 💡 **Solución**: Aplicar fine-tuning
+**Observaciones**: El modelo de Transfer Learning obtuvo un rendimiento significativamente peor que la CNN simple (51.09% vs 69.37%) y presentó un overfitting severo con un gap de 40.7%, el doble que el modelo base. El problema principal es que al mantener el modelo base congelado, este no logra adaptarse correctamente a las características específicas de CIFAR-10.
 
 ### Parte 3: Fine-tuning
 
 El fine-tuning consiste en **descongelar las últimas capas** del modelo preentrenado y entrenarlas con un learning rate muy bajo para que se adapten a nuestro dataset específico.
-
-#### Configuración de Fine-tuning
-
-```python
-def setup_fine_tuning(model, unfreeze_layers=10):
-    # Descongelar modelo base
-    base_model = model.layers[0]
-    base_model.trainable = True
-    
-    # Congelar todas excepto las últimas N capas
-    for layer in base_model.layers[:-unfreeze_layers]:
-        layer.trainable = False
-    
-    # Recompilar con LR más bajo
-    model.compile(
-        optimizer=optimizers.Adam(learning_rate=0.0001),  # 10x más bajo
-        loss='categorical_crossentropy',
-        metrics=['accuracy']
-    )
-    
-    return model
-```
-
-**Estrategia de 2 fases**:
-1. **Fase 1**: Entrenar solo el clasificador (capas congeladas) → LR = 0.001
-2. **Fase 2**: Descongelar últimas 10 capas y hacer fine-tuning → LR = 0.0001
-
-**Parámetros después de fine-tuning**: 745,290 entrenables (vs 12,810 inicial)
 
 ### Parte 4: Comparación de Arquitecturas Preentrenadas
 
@@ -205,26 +94,9 @@ Se evaluaron **9 modelos diferentes** de Keras Applications para identificar cu�
 
 *Comparación visual de 9 arquitecturas preentrenadas. Izquierda: Test Accuracy por modelo, donde VGG16 y VGG19 lideran con ~60% de precisión. Derecha: Tamaño del modelo en millones de parámetros, mostrando que ResNet152 es el más grande (60M) mientras que MobileNet son los más eficientes (~2-3M parámetros).*
 
-**Observaciones importantes**:
-
-⚠️ **Resultados inesperados**: Todos los modelos de transfer learning obtuvieron accuracy muy bajo (20-27%), incluso peor que el baseline MLP (47.4%). Esto se debe a varios factores:
-
-1. **Pocas épocas de entrenamiento**: Solo 5 épocas para comparación rápida
-2. **Sin fine-tuning**: Capas base completamente congeladas
-3. **Mismatch de dominios**: ImageNet (224×224) vs CIFAR-10 (32×32)
-4. **Configuración subóptima**: Learning rate y arquitectura del clasificador no optimizados
+**Observaciones importantes**: Todos los modelos de transfer learning obtuvieron accuracy muy bajo (20-27%), incluso peor que el baseline MLP (47.4%). Esto se debe a pocas épocas de entrenamiento (solo 5 para comparación rápida), capas base completamente congeladas sin fine-tuning, mismatch de dominios entre ImageNet (224×224) e imágenes de CIFAR-10 (32×32), y configuración subóptima del learning rate y arquitectura del clasificador.
 
 ### Análisis Comparativo: CNN vs Transfer Learning
-
-| Aspecto | CNN Simple | Transfer Learning (sin FT) | Transfer Learning (con FT) |
-|---------|------------|---------------------------|---------------------------|
-| **Test Accuracy** | 69.37% | 51.09% | Mejoraría ~60-65% |
-| **Overfitting Gap** | 17.4% | 40.7% | Reduciría a ~20-25% |
-| **Parámetros totales** | 2.1M | 2.3M | 2.3M |
-| **Parámetros entrenables** | 2.1M | 12.8K | 745K |
-| **Tiempo de entrenamiento** | ~30s/época | ~40s/época | ~50s/época |
-| **Convergencia** | 9 épocas | No converge bien | 15-20 épocas |
-| **Mejor para** | CIFAR-10 específico | Datasets grandes | Balance general |
 
 ![Comparación de precisión entre CNN Simple y Transfer Learning](09-imagenes/cnn-vs-transfer-learning.png)
 
@@ -234,167 +106,50 @@ Se evaluaron **9 modelos diferentes** de Keras Applications para identificar cu�
 
 ### 1. ¿Por qué las CNNs superan a las MLPs en imágenes?
 
-La CNN simple (69.37%) superó significativamente al mejor MLP de la TA8 (56.2%), una mejora de **+13.17%**. Esto se debe a:
-
-**Ventajas estructurales de las CNNs**:
-
-1. **Preservación de estructura espacial**: Las CNNs mantienen la relación entre píxeles vecinos, mientras que las MLPs aplanan la imagen y pierden esta información.
-
-2. **Invarianza traslacional**: Un filtro convolucional detecta el mismo patrón independientemente de su posición en la imagen. Una MLP necesitaría aprender el mismo patrón en cada posición.
-
-3. **Compartición de parámetros**: Los filtros se aplican a toda la imagen, reduciendo drásticamente el número de parámetros comparado con capas densas.
-
-4. **Jerarquía de características**: Las CNNs aprenden automáticamente una jerarquía:
-   - Capa 1: Bordes y colores básicos
-   - Capa 2: Texturas y patrones simples
-   - Capas superiores: Partes de objetos y objetos completos
-
-**Ejemplo práctico**: Para detectar un "ojo de gato":
-- **MLP**: Necesita aprender "ojo en posición (10,15)", "ojo en posición (10,16)", etc. → miles de conexiones
-- **CNN**: Aprende un filtro "detector de ojos" que funciona en cualquier posición → 9 parámetros (filtro 3×3)
+Las CNNs preservan la estructura espacial manteniendo la relación entre píxeles vecinos mientras que las MLPs aplanan la imagen perdiendo esta información, tienen invarianza traslacional donde un filtro detecta el mismo patrón independientemente de su posición (una MLP necesitaría aprender el mismo patrón en cada ubicación), comparten parámetros aplicando los filtros a toda la imagen reduciendo drásticamente el número de parámetros comparado con capas densas, y aprenden automáticamente una jerarquía de características donde la primera capa detecta bordes y colores básicos, la segunda capa texturas y patrones simples, y las capas superiores partes de objetos y objetos completos. Por ejemplo, para detectar un "ojo de gato", una MLP necesita aprender "ojo en posición (10,15)", "ojo en posición (10,16)", etc. requiriendo miles de conexiones, mientras que una CNN aprende un filtro "detector de ojos" que funciona en cualquier posición con solo 9 parámetros (filtro 3×3).
 
 ### 2. El Problema del Transfer Learning en CIFAR-10
 
-Sorprendentemente, el transfer learning **no funcionó bien** en este caso (51.09% vs 69.37% de CNN simple). ¿Por qué?
+Sorprendentemente, el transfer learning no funcionó bien en este caso (51.09% vs 69.37% de CNN simple). Las razones del bajo rendimiento incluyen mismatch de resolución donde ImageNet usa imágenes de 224×224 píxeles mientras CIFAR-10 solo 32×32 y los filtros aprendidos para imágenes grandes no se adaptan bien a imágenes tan pequeñas.
 
-**Razones del bajo rendimiento**:
-
-1. **Mismatch de resolución**: ImageNet usa imágenes de 224×224 píxeles, CIFAR-10 solo 32×32. Los filtros aprendidos para imágenes grandes no se adaptan bien a imágenes tan pequeñas.
-
-2. **Mismatch de dominio**: ImageNet contiene objetos en contextos naturales con alta resolución. CIFAR-10 tiene imágenes de baja resolución muy diferentes.
-
-3. **Capas congeladas**: Al congelar completamente el modelo base, no permitimos que se adapte a las características específicas de CIFAR-10.
-
-4. **Clasificador simple**: Solo agregamos una capa Dense final, que es insuficiente para traducir las características de ImageNet a las clases de CIFAR-10.
-
-**¿Cuándo funciona bien el Transfer Learning?**
-
-✅ **Funciona bien cuando**:
-- El dataset objetivo es similar al dataset de preentrenamiento
-- Tienes pocos datos (< 10,000 imágenes)
-- Las imágenes tienen resolución similar
-- Aplicas fine-tuning adecuado
-
-❌ **No funciona bien cuando**:
-- Hay gran diferencia de resolución (224×224 vs 32×32)
-- Los dominios son muy diferentes
-- Tienes suficientes datos para entrenar desde cero
-- No aplicas fine-tuning
+Transfer learning funciona bien cuando el dataset objetivo es similar al dataset de preentrenamiento y las imágenes tienen resolución similar. No funciona bien cuando hay gran diferencia de resolución o los dominios son muy diferentes.
 
 ### 3. Estrategias para Mejorar el Transfer Learning
 
-Para mejorar los resultados de transfer learning en CIFAR-10, se podrían aplicar:
-
-**Mejoras arquitectónicas**:
-```python
-model = keras.Sequential([
-    base_model,
-    layers.GlobalAveragePooling2D(), 
-    layers.Dense(256, activation='relu'),
-    layers.Dropout(0.5),
-    layers.Dense(128, activation='relu'),
-    layers.Dropout(0.3),
-    layers.Dense(num_classes, activation='softmax')
-])
-```
-
-**Mejoras de entrenamiento**:
-- **Fine-tuning gradual**: Descongelar capas progresivamente
-- **Learning rate scheduling**: Reducir LR durante entrenamiento
-- **Más épocas**: 30-50 épocas en lugar de 5-10
-
-**Resultados esperados con mejoras**: 65-75% test accuracy
+Para mejorar los resultados de transfer learning en CIFAR-10, se podrían aplicar mejoras de entrenamiento como fine-tuning gradual descongelando capas progresivamente, learning rate scheduling reduciendo el learning rate durante el entrenamiento, y entrenar por más épocas (30-50 en lugar de 5-10).
 
 ### 4. Comparación de Modelos Preentrenados
 
 De los 9 modelos evaluados, observamos distintos patrones:
 
-**Modelos grandes (ResNet50, ResNet101, ResNet152)**:
-- ✅ Mayor capacidad de representación
-- ❌ Más lentos de entrenar
-- ❌ Mayor riesgo de overfitting con pocos datos
-- 📊 Mejor accuracy: ResNet50 (27.02%)
+**Modelos grandes (ResNet50, ResNet101, ResNet152)**: Estos modelos tienen mayor capacidad de representación pero son más lentos de entrenar y presentan mayor riesgo de overfitting con pocos datos. El mejor de esta categoría fue ResNet50 con 27.02% de accuracy.
 
-**Modelos eficientes (MobileNet, EfficientNet)**:
-- ✅ Muy rápidos y ligeros
-- ✅ Diseñados para dispositivos móviles
-- ❌ Menor capacidad de representación
-- 📊 Mejor eficiencia: MobileNetV2 (0.091 acc/M params)
+**Modelos eficientes (MobileNet, EfficientNet)**: Son muy rápidos y ligeros, diseñados específicamente para dispositivos móviles, aunque tienen menor capacidad de representación comparados con modelos más grandes. MobileNetV2 destacó con la mejor eficiencia de 0.091 acc/M params.
 
-**Modelos clásicos (VGG16, VGG19)**:
-- ✅ Arquitectura simple y comprensible
-- ❌ Muchos parámetros, poco eficientes
-- ❌ Obsoletos comparados con arquitecturas modernas
+**Modelos clásicos (VGG16, VGG19)**: Tienen una arquitectura simple y comprensible pero muchos parámetros haciéndolos poco eficientes, y están obsoletos comparados con arquitecturas modernas como ResNet o EfficientNet.
 
 ![Comparación de arquitecturas preentrenadas](09-imagenes/model-comparison.png)
 
-*Las gráficas revelan un trade-off interesante: VGG16/VGG19 obtienen el mejor accuracy (~60%) pero con tamaño moderado (14-20M parámetros), mientras que los modelos MobileNet son extremadamente ligeros (2-3M) pero con menor precisión (~20-30%). ResNet152, siendo el más grande (60M), no logra el mejor rendimiento, sugiriendo que más parámetros no siempre significa mejor resultado.*
-
-**Recomendación para CIFAR-10**: Dado que el dataset es pequeño (32×32), los modelos ligeros como **MobileNetV2** o **EfficientNetB0** son más apropiados que modelos pesados como ResNet152.
-
+*Las gráficas muestran que los modelos VGG obtienen el mejor rendimiento (60%) con tamaño moderado, los MobileNet son muy ligeros pero menos precisos (20-30%), y el ResNet152 siendo el más grande no logra el mejor resultado, demostrando que más parámetros no siempre es mejor.*
 
 ### 5. Lecciones Aprendidas
 
-**Sobre CNNs**:
-- ✅ Las CNNs son **fundamentalmente superiores** a las MLPs para visión por computadora
-- ✅ Incluso una CNN simple supera a MLPs complejas con regularización avanzada
-- ✅ La estructura convolucional captura naturalmente patrones espaciales
+**Sobre CNNs**: Las CNNs son fundamentalmente superiores a las MLPs para visión por computadora, donde incluso una CNN simple supera a MLPs complejas con regularización avanzada. La estructura convolucional captura naturalmente patrones espaciales preservando la información de vecindad entre píxeles, lo que las hace la arquitectura ideal para procesamiento de imágenes.
 
-**Sobre Transfer Learning**:
-- ⚠️ No es una "bala de plata" - requiere configuración cuidadosa
-- ⚠️ El mismatch de dominio puede hacer que funcione peor que entrenar desde cero
-- ✅ Cuando funciona bien, ahorra tiempo y mejora resultados significativamente
-- ✅ Fine-tuning es casi siempre necesario para buenos resultados
+**Sobre Transfer Learning**: Transfer learning no es una solución mágica y requiere configuración cuidadosa. El mismatch de dominio puede hacer que funcione peor que entrenar desde cero, como observamos en CIFAR-10 donde la diferencia de resolución con ImageNet afectó significativamente los resultados. Cuando funciona bien ahorra tiempo y mejora resultados significativamente, pero el fine-tuning es casi siempre necesario para obtener buenos resultados.
 
-**Sobre el proceso de experimentación**:
-- 📊 Siempre comparar con un baseline simple (CNN desde cero)
-- 📊 Monitorear overfitting gap, no solo test accuracy
-- 📊 Considerar trade-offs: accuracy vs velocidad vs parámetros
-- 📊 Probar múltiples arquitecturas antes de decidir
+**Sobre el proceso de experimentación**: Es fundamental siempre comparar con un baseline simple como una CNN desde cero para evaluar si el transfer learning realmente aporta valor. Debemos monitorear el overfitting gap y no solo el test accuracy, considerar trade-offs entre accuracy, velocidad y número de parámetros, y probar múltiples arquitecturas antes de tomar una decisión final sobre qué modelo deployar en producción.
 
 ## Conclusiones
 
-### 1. Las CNNs son el Estándar para Visión por Computadora
+La superioridad de las CNNs sobre las MLPs quedó claramente demostrada con una CNN simple alcanzando casi 70% de test accuracy, una mejora importante lograda con una arquitectura simple de solo 2 bloques convolucionales. Esta tarea demostró que **la arquitectura importa tanto como los hiperparámetros**; en la TA8 optimizamos exhaustivamente MLPs alcanzando solo 56.2%, mientras que una CNN simple superó ese resultado en la primera iteración.
 
-La superioridad de las CNNs sobre las MLPs quedó claramente demostrada:
-- **CNN simple**: 69.37% test accuracy
-- **Mejor MLP (TA8)**: 56.2% test accuracy
-- **Mejora**: +13.17%
-
-Esta mejora se logró con una arquitectura simple de solo 2 bloques convolucionales. CNNs más profundas (ResNet, VGG, Inception) pueden alcanzar 90%+ en CIFAR-10.
-
-### 2. Transfer Learning Requiere Ajuste Cuidadoso
-
-El transfer learning no funcionó bien "out of the box" debido al mismatch entre ImageNet y CIFAR-10. Sin embargo, con las configuraciones adecuadas (fine-tuning, data augmentation, clasificador más complejo), se puede igualar o superar a la CNN simple.
-
-**Cuándo usar cada enfoque**:
-- **CNN desde cero**: Dataset suficientemente grande, dominio específico
-- **Transfer Learning**: Pocos datos, dominio similar a ImageNet, tiempo limitado
-
-
-### 3. Comparaciones
-
-Nuestros resultados en contexto:
-
-| Enfoque | Test Accuracy | Observación |
-|---------|---------------|-------------|
-| **Baseline MLP (TA8)** | 56.2% | Mejor MLP con regularización |
-| **Nuestra CNN simple** | 69.4% | 2 bloques conv |
-| **Nuestro Transfer Learning** | 51.1% | Sin fine-tuning, mal configurado |
-
-Hay margen significativo de mejora aplicando técnicas más avanzadas.
-
-### 5. Reflexión Final
-
-Esta tarea demostró que **la arquitectura importa tanto como los hiperparámetros**. En la TA8, optimizamos exhaustivamente MLPs y alcanzamos 56.2%. Con una CNN simple, sin optimización especial, superamos ese resultado en la primera iteración (69.4%).
-
-Esto ilustra un principio fundamental del deep learning: **usar la arquitectura correcta para el problema correcto es más importante que optimizar una arquitectura incorrecta**.
-
+El transfer learning no funcionó bien "out of the box" debido al mismatch entre ImageNet y CIFAR-10, pero con configuraciones adecuadas (fine-tuning, data augmentation, clasificador más complejo) se podría igualar o superar a la CNN simple. La recomendación es usar CNN desde cero cuando se tiene un dataset suficientemente grande y dominio específico, mientras que transfer learning es preferible con pocos datos, dominio similar a ImageNet o tiempo limitado. Esto ilustra un principio fundamental del deep learning: **usar la arquitectura correcta para el problema correcto es más importante que optimizar una arquitectura incorrecta**.
 
 ---
 
-**Recursos adicionales**:
+### Recursos adicionales
+
 - [CS231n: Convolutional Neural Networks](http://cs231n.stanford.edu/)
 - [Transfer Learning Guide - Keras](https://keras.io/guides/transfer_learning/)
 - [CIFAR-10 Benchmark](https://paperswithcode.com/sota/image-classification-on-cifar-10)
-
