@@ -258,7 +258,7 @@ Se compararon cuatro enfoques usando Silhouette Score:
 
 ![VISUALIZACIÓN DE CLUSTERS](05-imagenes/VISUALIZACIÓN DE CLUSTERS.png)
 
-*Visualización de los 5 clusters finales en el espacio reducido de PCA (2D). Cada color representa un segmento de clientes diferente con características distintivas. Los clusters están bien separados espacialmente, confirmando la efectividad del K-Means con K=5. Los centroides (marcados con X) muestran el centro de cada grupo, y la separación clara entre clusters indica una segmentación robusta de los clientes del mall.*
+*Visualización de los 4 clusters finales en el espacio reducido de PCA (2D). Cada color representa un segmento de clientes diferente con características distintivas. Los clusters están bien separados espacialmente, confirmando la efectividad del K-Means con K=5. Los centroides (marcados con X) muestran el centro de cada grupo, y la separación clara entre clusters indica una segmentación robusta de los clientes del mall.*
 
 ### Validación de Resultados
 
