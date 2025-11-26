@@ -386,5 +386,3 @@ Procesar cada N frames (si puedo tener cierto delay)
 - [SORT Tracking Paper](https://arxiv.org/abs/1602.00763)
 - [DeepSORT Paper](https://arxiv.org/abs/1703.07402)
 - [ByteTrack Paper](https://arxiv.org/abs/2110.06864)
-
-
