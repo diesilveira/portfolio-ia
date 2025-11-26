@@ -35,26 +35,6 @@ Se evaluaron dos tipos de prompts: **Point Prompts** que consisten en un punto (
 
 #### Resultados Zero-shot
 
-**Point Prompts**:
-
-| Métrica | Valor | Desviación |
-|---------|-------|------------|
-| **IoU** | 0.5291 | ±0.3214 |
-| **Dice** | 0.6220 | ±0.3377 |
-| **Precision** | 0.8193 | - |
-| **Recall** | 0.5885 | - |
-
-**Box Prompts**:
-
-| Métrica | Valor | Desviación |
-|---------|-------|------------|
-| **IoU** | 0.7230 | ±0.2088 |
-| **Dice** | 0.8156 | ±0.1985 |
-| **Precision** | 0.8476 | - |
-| **Recall** | 0.8106 | - |
-
-**Análisis de resultados**:
-
 El modelo pretrained falla en áreas que no se distingue bien el agua, la confunde con superficies oscuras como asfalto o sombras. No captura bien inundaciones irregulares.
 
 ### Parte 3: Fine-tuning de SAM
@@ -123,26 +103,29 @@ En este caso particular los box prompts superan a point prompts ya que las areas
 
 Para monitoreo de desastres, los False Negatives (bajo recall) significan áreas inundadas no detectadas y personas en riesgo sin ayuda, mientras que los False Positives (baja precision) solo generan falsas alarmas con recursos mal asignados pero sin poner vidas en peligro. El fine-tuning mejoró el recall en +37%, reduciendo significativamente el riesgo de perder áreas críticas, lo que demuestra que en aplicaciones de seguridad y respuesta a emergencias, optimizar recall es prioritario sobre precision.
 
-### 4. Aplicaciones Más Allá de Flood Detection
-
-Este tipo de modelado es extremadamente util para detectar y segmentar áreas de interés:
-
-#### Respuesta ante incidentes:
-En el ámbito de gestión de desastres, SAM puede aplicarse no solo a la detección de inundaciones (nuestro caso de uso actual), sino también a la segmentación de áreas quemadas en imágenes satelitales para monitoreo de incendios, identificación de zonas de deslizamiento de tierra, y mapeo de edificios colapsados tras terremotos, permitiendo una respuesta más rápida y coordinada en situaciones de emergencia.
-
-#### Monitoreo ambiental:
-Para monitoreo ambiental, este tipo de segmentación es util para detectar áreas de tala ilegal en bosques, analizar patrones en corrientes oceánicas mediante las texturas y colores del agua, segmentar floraciones de algas tóxicas que afectan ecosistemas marinos, y trackear el retroceso de glaciares como indicador del cambio climático, proporcionando datos críticos para la conservación y estudios ambientales.
-
-#### Planificación urbana: 
-Para planificación urbana, la tecnología permite mapear áreas susceptibles a inundación para prevención de desastres, detectar islas de calor urbanas donde la temperatura es elevada para mejorar diseño de espacios públicos, y cuantificar áreas verdes en ciudades para evaluar calidad de vida y planificar desarrollo sostenible.
-
-### 5. Eficiencia del Fine-tuning: Solo 80 Imágenes
+### 4. Eficiencia del Fine-tuning: Solo 80 Imágenes
 
 Con solo 80 imágenes de entrenamiento logramos una mejora de mas del 40% sobre el baseline. El modelo ya conoce conceptos fundamentales como edges y boundaries, texturas y colores, y contexto espacial, por lo que solo necesita aprender cómo se ve el agua específicamente en contextos de inundación. Esto demuestra que para nuevos dominios no se necesita millones de imágenes si partimos de un foundation model bien entrenado.
 
-### 6. Combined Loss (BCE + Dice) es Efectivo
+### 5. Combined Loss (BCE + Dice) es Efectivo
 
 La combinación 50/50 de BCE y Dice funcionó bien, donde BCE optimiza la clasificación pixel-wise y Dice optimiza el overlap global, resultando en un balance efectivo entre precisión local y coherencia global de la máscara.
+
+### 6. Aplicaciones Más Allá de Flood Detection
+
+Este tipo de modelado es extremadamente util para detectar y segmentar áreas de interés:
+
+#### Respuesta ante incidentes
+
+En el ámbito de gestión de desastres, SAM puede aplicarse no solo a la detección de inundaciones (nuestro caso de uso actual), sino también a la segmentación de áreas quemadas en imágenes satelitales para monitoreo de incendios, identificación de zonas de deslizamiento de tierra, y mapeo de edificios colapsados tras terremotos, permitiendo una respuesta más rápida y coordinada en situaciones de emergencia.
+
+#### Monitoreo ambiental
+
+Para monitoreo ambiental, este tipo de segmentación es util para detectar áreas de tala ilegal en bosques, analizar patrones en corrientes oceánicas mediante las texturas y colores del agua, segmentar floraciones de algas tóxicas que afectan ecosistemas marinos, y trackear el retroceso de glaciares como indicador del cambio climático, proporcionando datos críticos para la conservación y estudios ambientales.
+
+#### Planificación urbana
+
+Para planificación urbana, la tecnología permite mapear áreas susceptibles a inundación para prevención de desastres, detectar islas de calor urbanas donde la temperatura es elevada para mejorar diseño de espacios públicos, y cuantificar áreas verdes en ciudades para evaluar calidad de vida y planificar desarrollo sostenible.
 
 ---
 
