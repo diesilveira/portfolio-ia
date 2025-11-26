@@ -6,24 +6,28 @@ El **TA2** consistió en implementar un modelo baseline y una regresión logíst
 
 ### Metodología
 
-1. **Preprocesamiento de datos**: 
-   - Imputación de valores faltantes en `Age`, `Fare` y `Embarked`
-   - Manejo estratégico de missing values según el tipo de variable
+#### Preprocesamiento de datos
 
-2. **Feature Engineering**:
-   - Creación de `FamilySize` (SibSp + Parch + 1)
-   - Variable `IsAlone` para identificar pasajeros solitarios
-   - Extracción de títulos del nombre (`Title`)
-   - Agrupación de títulos raros bajo categoría "Rare"
+- Imputación de valores faltantes en `Age`, `Fare` y `Embarked`
+- Manejo estratégico de missing values según el tipo de variable
 
-3. **Modelado**:
-   - **Baseline**: DummyClassifier que predice siempre la clase más común
-   - **Regresión Logística**: Modelo supervisado con regularización
-   - División train/test (80/20) con estratificación
+#### Feature Engineering
 
-4. **Evaluación**:
-   - Métricas de accuracy, precision, recall y F1-score
-   - Matriz de confusión para análisis de errores
+- Creación de `FamilySize` (SibSp + Parch + 1)
+- Variable `IsAlone` para identificar pasajeros solitarios
+- Extracción de títulos del nombre (`Title`)
+- Agrupación de títulos raros bajo categoría "Rare"
+
+#### Modelado
+
+- **Baseline**: DummyClassifier que predice siempre la clase más común
+- **Regresión Logística**: Modelo supervisado con regularización
+- División train/test (80/20) con estratificación
+
+#### Evaluación
+
+- Métricas de accuracy, precision, recall y F1-score
+- Matriz de confusión para análisis de errores
 
 ### Dataset Procesado
 
@@ -39,6 +43,7 @@ El **TA2** consistió en implementar un modelo baseline y una regresión logíst
 - **Regresión Logística Accuracy**: 81.56%
 
 ### Matriz de Confusión (Regresión Logística)
+
 ```
            Predicho
 Actual    No (0)  Sí (1)
@@ -47,6 +52,7 @@ Sí (1)      21     48
 ```
 
 ### Reporte de Clasificación
+
 ```
               precision    recall  f1-score   support
 No (0)           0.82      0.89      0.86       110
