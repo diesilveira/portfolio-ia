@@ -285,7 +285,7 @@ Se compararon cuatro enfoques usando Silhouette Score:
 3. **Programas de lealtad**: Diseñar incentivos específicos para cada perfil de cliente
 4. **Marketing digital**: Segmentar campañas publicitarias por cluster demográfico
 
-## Reflexiones de Data Detective
+## Reflexiones
 
 ### 🔍 Metodología CRISP-DM
 
