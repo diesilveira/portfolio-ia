@@ -55,3 +55,7 @@ Todos los archivos originales de los cuales se hizo el resumen en este portfolio
 #### 🎯 **YOLO Fine-tuning y Object Tracking: detección de productos en retail**
 - **[Fine-tuning de YOLOv8 para detección específica de productos y tracking en video](11-yolo-finetuning-tracking.md)**
 
+
+#### 🌊 **SAM Flood Segmentation: detección de áreas inundadas con Segment Anything Model**
+- **[Segmentación de inundaciones con SAM: comparando zero-shot vs fine-tuned para disaster response](12-sam-flood-segmentation.md)**
+
