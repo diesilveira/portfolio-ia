@@ -190,23 +190,27 @@ Desafíos de todo tipo, desde que el agua se esparce de forma irregular, a que e
 Modelos alternativos/complementarios para explorar:
 
 **SAM Variants:**
+
 - [MobileSAM](https://github.com/ChaoningZhang/MobileSAM) - SAM optimizado para dispositivos móviles
 - [FastSAM](https://github.com/CASIA-IVA-Lab/FastSAM) - 50x más rápido que SAM original
 - [SAM-HQ](https://github.com/SysCV/sam-hq) - Mayor calidad en detección de bordes
 - [EfficientSAM](https://github.com/yformer/EfficientSAM) - Optimizado para eficiencia computacional
 
 **Semantic Segmentation:**
+
 - [SegFormer](https://github.com/NVlabs/SegFormer) - Transformer-based segmentation
 - [DeepLabV3+](https://github.com/tensorflow/models/tree/master/research/deeplab) - ResNet-based con ASPP
 - [U-Net](https://github.com/milesial/Pytorch-UNet) - Arquitectura clásica para segmentación médica
 - [Mask2Former](https://github.com/facebookresearch/Mask2Former) - Universal segmentation framework
 
 **Instance Segmentation:**
+
 - [Mask R-CNN](https://github.com/matterport/Mask_RCNN) - Clásico robusto y confiable
 - [YOLACT](https://github.com/dbolya/yolact) - Real-time instance segmentation
 - [SOLOv2](https://github.com/WXinlong/SOLO) - Simple y efectivo
 
 **Panoptic Segmentation:**
+
 - [Panoptic-DeepLab](https://github.com/bowenc0221/panoptic-deeplab) - Semantic + instance unificado
 - [EfficientPS](https://github.com/DeepSceneSeg/EfficientPS) - Estado del arte en panoptic segmentation
 
