@@ -146,7 +146,7 @@ Las imágenes del dataset muestran:
 
 #### Análisis Cualitativo
 
-Comparamos ambos modelos en 3 imágenes del validation set:
+Comparamos ambos modelos en 2 imágenes del validation set:
 
 ![Comparación 1: Manzana](11-imagenes/comparison-1.png)
 
@@ -156,9 +156,7 @@ Comparamos ambos modelos en 3 imágenes del validation set:
 
 *Comparación en imagen de uvas. Izquierda: Modelo base confunde las uvas con "vase" (florero). Derecha: Modelo fine-tuned detecta correctamente "Grape". El fine-tuning resuelve este error.*
 
-![Comparación 3: Sandía](11-imagenes/comparison-3.png)
 
-*Comparación en imagen de sandía. Izquierda: Modelo base genera falso positivo detectando "person". Derecha: Modelo fine-tuned detecta correctamente "Watermelon" sin falsos positivos.*
 
 **Imagen 1 - Manzana**:
 - Base (COCO): 1 detección → "apple"
@@ -170,10 +168,6 @@ Comparamos ambos modelos en 3 imágenes del validation set:
 - Fine-tuned: 1 detección → "Grape"
 - Resultado: Fine-tuned gana - detecta correctamente
 
-**Imagen 3 - Sandía**:
-- Base (COCO): 2 detecciones → "person" (falso positivo)
-- Fine-tuned: 1 detección → "Watermelon"
-- Resultado: Fine-tuned gana - menos falsos positivos
 
 #### Análisis Cuantitativo de Errores
 
@@ -189,22 +183,22 @@ Analizamos 10 imágenes del validation set calculando True Positives (TP), False
 
 **Interpretación**:
 
-1. Modelo base no funciona en este dominio:
-   - 0 True Positives → no detectó ninguna fruta correctamente
-   - 4 False Positives → detectó cosas que no son frutas
-   - 3 False Negatives → se perdió 3 frutas reales
-   - F1-Score = 0.000 → completamente inservible
+**Modelo base no funciona en este dominio:**
+- 0 True Positives → no detectó ninguna fruta correctamente
+- 4 False Positives → detectó cosas que no son frutas
+- 3 False Negatives → se perdió 3 frutas reales
+- F1-Score = 0.000 → completamente inservible
 
-2. Fine-tuned mejora dramáticamente:
-   - 2 True Positives → detectó 2 frutas correctamente
-   - Solo 1 False Positive → menos errores
-   - Solo 1 False Negative → detecta más frutas
-   - F1-Score = 0.667 
+**Fine-tuned mejora dramáticamente:**
+- 2 True Positives → detectó 2 frutas correctamente
+- Solo 1 False Positive → menos errores
+- Solo 1 False Negative → detecta más frutas
+- F1-Score = 0.667 
 
-3. **Mejora absoluta**:
-   - +0.667 en Precision: De 0% a 66.7%
-   - +0.667 en Recall: De 0% a 66.7%
-   - +0.667 en F1-Score: De 0% a 66.7%
+**Mejora absoluta:**
+- +0.667 en Precision: De 0% a 66.7%
+- +0.667 en Recall: De 0% a 66.7%
+- +0.667 en F1-Score: De 0% a 66.7%
 
 ![Comparación de métricas](11-imagenes/metrics-comparison.png)
 
@@ -261,15 +255,13 @@ Implementamos tracking con **Norfair**, una librería especializada en object tr
 
 ### 1. Fine-tuning es Esencial para Dominios Específicos
 
-**Lección clave**: Un modelo preentrenado en COCO (80 clases genéricas) no es tan util para detección de productos específicos, pero sirve com base, y no tener que crear el modelo entero, ya qeu crearlo y entrenarlo llevaria mucho tiempo.
+Un modelo preentrenado en COCO (80 clases genéricas) no es tan util para detección de productos específicos, pero sirve com base, y no tener que crear el modelo entero, ya qeu crearlo y entrenarlo llevaria mucho tiempo.
 
 
 ### 2. Desbalance de Clases Afecta Rendimiento
 
 Orange por ejemplo tiene 10 veces más datos que Pineapple, pero su efectividad es menor.
-esto se debe principalmente a:
-- Pineapple tiene forma distintiva → fácil de aprender
-- Orange la puede  confundir con Apple (ambas redondas y similares), ademas tiene más variabilidad (diferentes tamaños, colores, contextos)
+esto se debe principalmente a que Pineapple tiene forma distintiva, mas fácil de aprender, Orange en cambio la puede  confundir con Apple (ambas redondas y similares) y ademas tiene más variabilidad (diferentes tamaños, colores, contextos)
 
 Más datos no siempre significa que el rendimiento vaya a ser mejor. La distintividad de la clase importan más que la cantidad.
 
@@ -278,22 +270,22 @@ Más datos no siempre significa que el rendimiento vaya a ser mejor. La distinti
 
 Este problema es uno de los que más me ha gustado ya que tiene un impacto y aplicación real de negocio y se puede llevar a infinitos ámbitos de aplicación:
 
-Manufactura & Logística:
+#### Manufactura & Logística:
 - Control de calidad: Detectar defectos en productos en línea de producción
 - Tracking de paquetes: Seguir paquetes en centros de distribución
 - Conteo automático: Contar productos en pallets sin intervención humana
 
-Seguridad & Vigilancia:
+#### Seguridad & Vigilancia:
 - Conteo de personas: Medir aforo en tiendas, eventos
 - Parking inteligente: Detectar espacios libres en estacionamientos
 - Detección de anomalías: Identificar comportamientos sospechosos
 
-Salud & Medicina:
+#### Salud & Medicina:
 - Conteo de células: Detectar y contar células en microscopía
 - Control de medicamentos: Verificar que pastillas correctas estén en blister
 - Tracking de instrumental: Seguir instrumentos quirúrgicos en sala de operaciones
 
-Valor de negocio:
+#### Valor de negocio:
 - ROI alto: Reducción de costos laborales
 - Eficiencia: Procesos automáticos 24/7
 - Escalabilidad: Un modelo puede replicarse en múltiples ubicaciones
