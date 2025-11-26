@@ -10,3 +10,5 @@ nav:
   - "UT2 - TA7: Redes Neuronales y Perceptrón": 06-redes-neuronales-perceptron.md
   - "UT2 - TA8: Backpropagation y Optimizadores": 08-backpropagation-optimizadores.md
   - "UT3 - TA9: CNNs y Transfer Learning": 09-cnn-transfer-learning.md
+  - "UT3 - TA10: Data Augmentation Avanzado & Explicabilidad": 10-data-augmentation-xai.md
+  - "UT3 - TA11: YOLO Fine-tuning y Object Tracking": 11-yolo-finetuning-tracking.md

@@ -2,7 +2,7 @@
 
 ## Resumen de la Tarea
 
-La **TA4** consistió en implementar técnicas avanzadas de validación cruzada y selección de modelos para evaluar la estabilidad y rendimiento de diferentes algoritmos de machine learning. El objetivo principal fue comprender la importancia de la validación rigurosa, comparar métodos de validación cruzada, y seleccionar el mejor modelo basándose en criterios de rendimiento y estabilidad.
+Esta tarea consistió en implementar técnicas avanzadas de validación cruzada y selección de modelos para evaluar la estabilidad y rendimiento de diferentes algoritmos de machine learning. El objetivo principal fue comprender la importancia de la validación rigurosa, comparar métodos de validación cruzada, y seleccionar el mejor modelo basándose en criterios de rendimiento y estabilidad.
 
 ### Metodología
 

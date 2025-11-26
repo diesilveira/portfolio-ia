@@ -2,7 +2,7 @@
 
 ## Resumen de la Tarea
 
-LA **TA1** consistió en realizar un análisis exploratorio de datos (EDA) del dataset del Titanic, disponible en Kaggle. El objetivo principal fue entender los factores que influyeron en la supervivencia de los pasajeros durante el hundimiento del Titanic en 1912.
+Esta tarea consistió en realizar un análisis exploratorio de datos (EDA) del dataset del Titanic, disponible en Kaggle. El objetivo principal fue entender los factores que influyeron en la supervivencia de los pasajeros durante el hundimiento del Titanic en 1912.
 
 ### Metodología
 
@@ -24,22 +24,6 @@ El análisis incluyó cuatro visualizaciones clave organizadas en una matriz 2x2
 
 ![Gráficos del Análisis Exploratorio del Titanic](titanic-graficas.png)
 
-```python
-fig, axes = plt.subplots(2, 2, figsize=(12, 10))
-
-# 1. Supervivencia por sexo
-sns.countplot(data=train, x='Survived', hue='Sex', ax=axes[0,0])
-
-# 2. Tasa de supervivencia por clase
-sns.barplot(data=train, x='Pclass', y='Survived', estimator=np.mean, ax=axes[0,1])
-
-# 3. Distribución de edad por supervivencia
-sns.histplot(data=train, x='Age', hue='Survived', kde=True, bins=30, ax=axes[1,0])
-
-# 4. Mapa de correlaciones
-numeric_cols = ['Survived', 'Pclass', 'Age', 'SibSp', 'Parch', 'Fare']
-sns.heatbox(train[numeric_cols].corr(), annot=True, cmap='Blues', ax=axes[1,1])
-```
 
 Los gráficos muestran claramente los patrones identificados en el análisis:
 
@@ -79,8 +63,6 @@ Los valores faltantes se distribuyen así:
 
 2. **Hipótesis familiar**:
    - Las familias pequeñas (2-4 miembros) tuvieron mejor supervivencia que individuos solos o familias muy grandes
-
-
 
 
 ## Conclusiones

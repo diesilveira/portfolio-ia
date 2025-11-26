@@ -110,7 +110,3 @@ En un contexto de emergencia, es más crítico **no identificar a alguien que po
 1. **El feature engineering es muy importante**: Las nuevas variables mejoraron significativamente el rendimiento
 2. **La regresión logística supera al baseline**: +20% de accuracy
 3. **El modelo tiene sesgo conservador**: Tiende a predecir más muertes que supervivencias
-
-
-
-

@@ -6,30 +6,30 @@ La **TA5** consistió en aplicar técnicas de aprendizaje no supervisado para se
 
 ### Metodología
 
-1. **Análisis Exploratorio de Datos (EDA)**:
-   - Exploración del dataset Mall Customer Segmentation
-   - Análisis de distribuciones, correlaciones y outliers
-   - Identificación de variables clave para segmentación
+**Análisis Exploratorio de Datos (EDA)**:
+- Exploración del dataset Mall Customer Segmentation
+- Análisis de distribuciones, correlaciones y outliers
+- Identificación de variables clave para segmentación
 
-2. **Preprocesamiento de Datos**:
-   - Codificación de variables categóricas con OneHotEncoder
-   - Comparación de escaladores: MinMaxScaler, StandardScaler, RobustScaler
-   - Selección del mejor escalador basado en métricas de clustering
+**Preprocesamiento de Datos**:
+- Codificación de variables categóricas con OneHotEncoder
+- Comparación de escaladores: MinMaxScaler, StandardScaler, RobustScaler
+- Selección del mejor escalador basado en métricas de clustering
 
-3. **Análisis de Componentes Principales (PCA)**:
-   - Reducción dimensional de 5D a 2D
-   - Análisis de varianza explicada y scree plot
-   - Interpretación de componentes principales
+**Análisis de Componentes Principales (PCA)**:
+- Reducción dimensional de 5D a 2D
+- Análisis de varianza explicada y scree plot
+- Interpretación de componentes principales
 
-4. **Feature Selection**:
-   - Forward Selection y Backward Elimination
-   - Comparación PCA vs Feature Selection
-   - Evaluación con Silhouette Score
+**Feature Selection**:
+- Forward Selection y Backward Elimination
+- Comparación PCA vs Feature Selection
+- Evaluación con Silhouette Score
 
-5. **Clustering con K-Means**:
-   - Búsqueda del K óptimo con Elbow Method y Silhouette Analysis
-   - Entrenamiento del modelo final
-   - Análisis de perfiles de clientes por cluster
+**Clustering con K-Means**:
+- Búsqueda del K óptimo con Elbow Method y Silhouette Analysis
+- Entrenamiento del modelo final
+- Análisis de perfiles de clientes por cluster
 
 ### Dataset: Mall Customer Segmentation
 
@@ -66,9 +66,15 @@ Spending Score        -0.327         0.010           1.000
 
 ![Distribuciones de Variables Clave](05-imagenes/Distribuciones de Variables Clave.png)
 
+*Distribuciones de las variables principales del dataset. Se observa que Age tiene distribución aproximadamente normal centrada en 35-40 años, Annual Income muestra distribución uniforme entre 15K-130K, y Spending Score también es relativamente uniforme entre 1-100. La variable Gender está balanceada entre masculino y femenino.*
+
 ![Relaciones Entre Variables](05-imagenes/Relaciones Entre Variables.png)
 
+*Scatter plots mostrando relaciones entre pares de variables. Se identifican patrones interesantes: clientes con alto Annual Income pueden tener Spending Score bajo o alto (dos grupos distintos), y existe cierta relación entre Age y Spending Score donde clientes más jóvenes tienden a gastar más.*
+
 ![Matriz de Correlación - Mall Customers](05-imagenes/Matriz de Correlación - Mall Customers.png)
+
+*Matriz de correlación revelando relaciones lineales entre variables. Las correlaciones son generalmente débiles (valores cercanos a 0), lo que indica que las variables son relativamente independientes. La correlación más notable es negativa entre Age y Spending Score (-0.33), sugiriendo que clientes más jóvenes tienden a tener mayor score de gasto.*
 
 ## Preprocesamiento y Selección de Escalador
 
@@ -76,7 +82,7 @@ Spending Score        -0.327         0.010           1.000
 
 Se evaluaron tres métodos de escalado usando Silhouette Score con K-Means (K=4):
 
-1. **MinMaxScaler**: 0.364 🏆
+1. **MinMaxScaler**: 0.364
 2. **StandardScaler**: 0.332
 3. **RobustScaler**: 0.298
 
@@ -85,19 +91,17 @@ Se evaluaron tres métodos de escalado usando Silhouette Score con K-Means (K=4)
 - **Efecto**: Escala todas las variables al rango [0,1]
 - **Ventaja**: Preserva las relaciones originales sin distorsión por outliers
 
-### Codificación de Variables Categóricas
-
-```python
-# OneHotEncoder para variable Genre
-Genre_Female: [0, 1] 
-Genre_Male: [0, 1]
-```
+### Variables Categóricas
 
 **Dataset final**: 200 muestras × 5 features (3 numéricas + 2 categóricas binarias)
 
 ![Comparación de Scalers - Boxplots](05-imagenes/Comparación de Scalers - Boxplots.png)
 
+*Comparación visual de tres métodos de escalado mediante boxplots. MinMaxScaler transforma los datos al rango [0,1] manteniendo la distribución original. StandardScaler centra los datos en 0 con desviación estándar de 1. RobustScaler es similar a StandardScaler pero más resistente a outliers. Los boxplots muestran cómo cada método afecta la distribución de las variables.*
+
 ![Annual Income- Original vs Scalers](05-imagenes/Annual Income- Original vs Scalers.png)
+
+*Efecto de cada escalador en la variable Annual Income. La distribución original (15K-130K) se transforma de manera diferente según el método: MinMaxScaler comprime al rango [0,1], StandardScaler normaliza con media 0, y RobustScaler usa la mediana para reducir el impacto de valores extremos. MinMaxScaler preserva mejor las relaciones originales para clustering.*
 
 ## Análisis de Componentes Principales (PCA)
 
@@ -130,7 +134,7 @@ Genre_Male: [0, 1]
 
 Se compararon cuatro enfoques usando Silhouette Score:
 
-1. **PCA (2D)**: 0.686 🏆 (+88.3% vs baseline)
+1. ✅ **PCA (2D)**: 0.686 (+88.3% vs baseline)
 2. **Forward Selection**: 0.573 (+57.5% vs baseline)
 3. **Backward Elimination**: 0.573 (+57.5% vs baseline)
 4. **Baseline (todas)**: 0.364 (referencia)
@@ -147,6 +151,8 @@ Se compararon cuatro enfoques usando Silhouette Score:
 - **Ventaja**: Captura 86.3% de varianza en solo 2 dimensiones
 
 ![Comparación de Métodos de Feature Selection](05-imagenes/Comparación de Métodos de Feature Selection.png)
+
+*Comparación de Silhouette Scores entre diferentes métodos de reducción dimensional. PCA con 2 componentes logra el mejor score (0.686), superando significativamente a Forward Selection y Backward Elimination (ambos con 0.573) y al baseline sin reducción (0.364). Esto demuestra que PCA captura mejor la estructura de clusters en los datos al crear componentes que maximizan la varianza.*
 
 ### ❓ Preguntas de Análisis
 
@@ -251,6 +257,8 @@ Se compararon cuatro enfoques usando Silhouette Score:
 **Detección de outliers**: Sin outliers detectados (todos los silhouette scores > 0)
 
 ![VISUALIZACIÓN DE CLUSTERS](05-imagenes/VISUALIZACIÓN DE CLUSTERS.png)
+
+*Visualización de los 5 clusters finales en el espacio reducido de PCA (2D). Cada color representa un segmento de clientes diferente con características distintivas. Los clusters están bien separados espacialmente, confirmando la efectividad del K-Means con K=5. Los centroides (marcados con X) muestran el centro de cada grupo, y la separación clara entre clusters indica una segmentación robusta de los clientes del mall.*
 
 ### Validación de Resultados
 
