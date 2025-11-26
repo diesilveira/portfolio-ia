@@ -17,9 +17,10 @@ SAM es un modelo general entrenado en SA-1B (11M imágenes, 1.1B máscaras), per
 
 ### Parte 1: Exploración del Dataset
 
-**Características del dataset**:
-- **Total de imágenes**: 290
-- **Split**: 80 train / 20 validation
+#### Características del dataset
+
+- **Total de imágenes**: 290 imágenes
+- **Split**: 80 train / 20 validation  
 - **Contenido**: Imágenes aéreas/satelitales de áreas inundadas
 - **Formato**: Imágenes RGB + máscaras binarias (0=tierra, 1=agua)
 - **Tamaños**: Variables (resized a 1024×1024 para SAM)
@@ -27,6 +28,7 @@ SAM es un modelo general entrenado en SA-1B (11M imágenes, 1.1B máscaras), per
 #### Estadísticas del Dataset
 
 **Observaciones**:
+
 - Dataset balanceado en términos de píxeles (43% agua vs 57% tierra)
 - Gran variabilidad en tamaños de imagen
 - Contextos diversos: urbano, rural, ríos, inundaciones costeras
