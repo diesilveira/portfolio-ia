@@ -6,23 +6,27 @@ Esta tarea consistió en implementar técnicas avanzadas de validación cruzada 
 
 ### Metodología
 
-1. **Dataset utilizado**: Student Dropout and Academic Success (UCI ML Repository)
-   - 4,424 estudiantes con 36 características
-   - Problema multiclase: Dropout (32.1%), Enrolled (17.9%), Graduate (49.9%)
+#### Dataset utilizado: Student Dropout and Academic Success (UCI ML Repository)
 
-2. **Técnicas de validación cruzada**:
-   - **KFold**: División simple en 5 partes
-   - **StratifiedKFold**: Mantiene proporción de clases en cada fold
+- 4,424 estudiantes con 36 características
+- Problema multiclase: Dropout (32.1%), Enrolled (17.9%), Graduate (49.9%)
 
-3. **Comparación de modelos**:
-   - Logistic Regression con StandardScaler
-   - Ridge Classifier con regularización L2
-   - Random Forest (ensemble method)
+#### Técnicas de validación cruzada
 
-4. **Métricas de evaluación**:
-   - F1-score weighted para manejar clases desbalanceadas
-   - Análisis de estabilidad mediante desviación estándar
-   - Visualización comparativa de distribuciones
+- **KFold**: División simple en 5 partes
+- **StratifiedKFold**: Mantiene proporción de clases en cada fold
+
+#### Comparación de modelos**
+
+- Logistic Regression con StandardScaler
+- Ridge Classifier con regularización L2
+- Random Forest (ensemble method)
+
+#### Métricas de evaluación
+
+- F1-score weighted para manejar clases desbalanceadas
+- Análisis de estabilidad mediante desviación estándar
+- Visualización comparativa de distribuciones
 
 ### Dataset: Student Dropout and Academic Success
 
