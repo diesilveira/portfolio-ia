@@ -2,7 +2,7 @@
 
 ## Resumen de la Tarea
 
-La **TA3** consistió en implementar y comparar dos tipos  de modelos de machine learning: **Regresión Lineal** para problemas de predicción continua y **Regresión Logística** para problemas de clasificación binaria. El objetivo principal fue comprender las diferencias entre ambos tipos de modelos, sus métricas de evaluación específicas y cuándo aplicar cada uno.
+Esta tarea consistió en implementar y comparar dos tipos  de modelos de machine learning: **Regresión Lineal** para problemas de predicción continua y **Regresión Logística** para problemas de clasificación binaria. El objetivo principal fue comprender las diferencias entre ambos tipos de modelos, sus métricas de evaluación específicas y cuándo aplicar cada uno.
 
 ### Metodología
 
@@ -61,8 +61,6 @@ Benigno      1     70
 
 ## Parte 1: Métricas de Regresión
 
-### Completa las definiciones:
-
 **MAE (Mean Absolute Error)**: Promedio de los errores **absolutos** sin importar si son positivos o negativos.
 
 **MSE (Mean Squared Error)**: Promedio de los errores **al cuadrado**, penaliza más los errores grandes.
@@ -79,8 +77,6 @@ Benigno      1     70
 - El RMSE > MAE indica que hay algunos errores grandes que afectan más la métrica cuadrática
 
 ## Parte 2: Métricas de Clasificación
-
-### Completa las definiciones:
 
 **Accuracy**: Porcentaje de predicciones **correctas** sobre el total.
 
@@ -100,19 +96,17 @@ Benigno      1     70
 
 ## Parte 3: Selección de Modelos
 
-### Responde con tus propias palabras:
+### ¿Cuál modelo usarías para predecir el salario de un empleado?
 
-#### ¿Cuál modelo usarías para predecir el salario de un empleado?
+Usaría **Regresión Lineal** porque el salario es una **variable continua** (puede tomar cualquier valor numérico dentro de un rango). Los salarios no son categorías discretas sino números que pueden variar gradualmente (ej: $45,000, $45,500, $46,000, etc.). La regresión lineal es ideal para predecir valores numéricos continuos basándose en características como experiencia, educación, ubicación, etc.
 
-**Respuesta**: Usaría **Regresión Lineal** porque el salario es una **variable continua** (puede tomar cualquier valor numérico dentro de un rango). Los salarios no son categorías discretas sino números que pueden variar gradualmente (ej: $45,000, $45,500, $46,000, etc.). La regresión lineal es ideal para predecir valores numéricos continuos basándose en características como experiencia, educación, ubicación, etc.
+### ¿Cuál modelo usarías para predecir si un email es spam?
 
-#### ¿Cuál modelo usarías para predecir si un email es spam?
+Usaría **Regresión Logística** porque la clasificación de emails es un problema de **clasificación binaria**: solo hay dos opciones posibles (spam o no spam). No necesitamos predecir un valor numérico continuo, sino asignar cada email a una de dos categorías mutuamente excluyentes. La regresión logística es perfecta para este tipo de decisiones binarias ya que puede calcular la probabilidad de que un email sea spam y clasificarlo según un umbral.
 
-**Respuesta**: Usaría **Regresión Logística** porque la clasificación de emails es un problema de **clasificación binaria**: solo hay dos opciones posibles (spam o no spam). No necesitamos predecir un valor numérico continuo, sino asignar cada email a una de dos categorías mutuamente excluyentes. La regresión logística es perfecta para este tipo de decisiones binarias ya que puede calcular la probabilidad de que un email sea spam y clasificarlo según un umbral.
+### ¿Por qué es importante separar datos de entrenamiento y prueba?
 
-#### ¿Por qué es importante separar datos de entrenamiento y prueba?
-
-**Respuesta**: Para **evitar el sobreajuste (overfitting)** y obtener una evaluación honesta del modelo. Si evaluáramos el modelo con los mismos datos que usamos para entrenarlo, obtendríamos una medida artificialmente optimista del rendimiento - como si un estudiante se evaluara con las mismas preguntas que estudió.
+Para **evitar el sobreajuste (overfitting)** y obtener una evaluación honesta del modelo. Si evaluáramos el modelo con los mismos datos que usamos para entrenarlo, obtendríamos una medida artificialmente optimista del rendimiento - como si un estudiante se evaluara con las mismas preguntas que estudió.
 
 **Razones específicas:**
 - **Validación independiente**: Los datos de prueba actúan como un "examen final" que el modelo nunca ha visto
