@@ -19,26 +19,11 @@ SAM es un modelo general entrenado en SA-1B (11M imágenes, 1.1B máscaras), per
 
 #### Características del dataset
 
-- **Total de imágenes**: 290 imágenes
-- **Split**: 80 train / 20 validation  
-- **Contenido**: Imágenes aéreas/satelitales de áreas inundadas
-- **Formato**: Imágenes RGB + máscaras binarias (0=tierra, 1=agua)
-- **Tamaños**: Variables (resized a 1024×1024 para SAM)
-
-#### Estadísticas del Dataset
-
-**Observaciones**:
-- Dataset balanceado en términos de píxeles (43% agua vs 57% tierra)
-- Gran variabilidad en tamaños de imagen
-- Contextos diversos: urbano, rural, ríos, inundaciones costeras
-
-**Calidad del dataset**: Alta - máscaras precisas con boundaries bien definidos, variedad de escenarios de inundación.
+El dataset consta de 290 imágenes aéreas/satelitales de áreas inundadas, divididas en 80 para entrenamiento y 20 para validación. Las imágenes son RGB acompañadas de máscaras binarias (0=tierra, 1=agua) con tamaños variables que fueron redimensionadas a 1024×1024 para SAM. El dataset está balanceado en términos de píxeles (43% agua vs 57% tierra) con gran variabilidad en tamaños de imagen y contextos diversos incluyendo escenarios urbanos, rurales, ríos e inundaciones costeras. La calidad del dataset es alta con máscaras precisas y boundaries bien definidos, proporcionando una buena variedad de escenarios de inundación.
 
 ### Parte 2: SAM Pretrained - Zero-shot Inference
 
 #### Arquitectura de SAM
-
-**Componentes principales**:
 
 - **Image Encoder**: ViT-B (Vision Transformer Base) - 93.7M parámetros
 - **Prompt Encoder**: Procesa points, boxes o masks como input
@@ -46,15 +31,7 @@ SAM es un modelo general entrenado en SA-1B (11M imágenes, 1.1B máscaras), per
 
 #### Tipos de prompts evaluados
 
-**1. Point Prompts**: Un punto (x, y) + label (foreground/background)
-
-- Ventaja: Mínima interacción humana
-- Desventaja: Ambiguo en regiones complejas
-
-**2. Box Prompts**: Bounding box [x1, y1, x2, y2]
-
-- Ventaja: Menos ambigüedad, mejor contexto
-- Desventaja: Requiere más información previa
+Se evaluaron dos tipos de prompts: **Point Prompts** que consisten en un punto (x, y) con label de foreground/background, ofreciendo mínima interacción humana pero siendo ambiguos en regiones complejas; y **Box Prompts** que utilizan bounding boxes [x1, y1, x2, y2], proporcionando menos ambigüedad y mejor contexto espacial aunque requieren más información previa.
 
 #### Resultados Zero-shot
 
@@ -77,25 +54,14 @@ SAM es un modelo general entrenado en SA-1B (11M imágenes, 1.1B máscaras), per
 | **Recall** | 0.8106 | - |
 
 **Análisis de resultados**:
-El modelo pretrained falla en áreas que no se distingue bien el agua, la confunde  con superficies oscuras como asfalto o sombras.No captura bien inundaciones irregulares
+
+El modelo pretrained falla en áreas que no se distingue bien el agua, la confunde con superficies oscuras como asfalto o sombras. No captura bien inundaciones irregulares.
 
 ### Parte 3: Fine-tuning de SAM
 
 #### Estrategia de Fine-tuning
 
-**Parámetros congelados**:
-- Image Encoder (93.7M params): mantiene features generales
-- Prompt Encoder: mantiene capacidad de procesar prompts
-
-**Parámetros entrenables**:
-- Mask Decoder (4.1M params): se especializa en detectar agua
-
-
-**Justificación del approach**:
-- Entrenar pocos parámetros es mas eficiente y evita overfitting
-- Image encoder congelado preserva la capacidad de generalización
-
-usamos data augmentation de tipo HorizontalFlip, VerticalFlip, Rotate y RandomBrightnessContrast para generar mas imagenes (giradas, y con distinto brillo)
+La estrategia consistió en congelar el Image Encoder (93.7M parámetros) y el Prompt Encoder para mantener las features generales y la capacidad de procesar prompts, mientras que solo se entrenó el Mask Decoder (4.1M parámetros) para especializarse en detectar agua. Este approach es más eficiente ya que entrenar solo el 4.3% de los parámetros evita overfitting y preserva la capacidad de generalización del modelo. Además, se aplicó data augmentation mediante HorizontalFlip, VerticalFlip, Rotate y RandomBrightnessContrast para generar más variabilidad en las imágenes de entrenamiento con diferentes orientaciones y niveles de brillo.
 
 #### Resultados del Fine-tuning
 
@@ -145,12 +111,8 @@ usamos data augmentation de tipo HorizontalFlip, VerticalFlip, Rotate y RandomBr
 
 ### 1. SAM es un Foundation Model Poderoso pero Requiere Especialización
 
-SAM preentrenado en SA-1B tiene capacidad de segmentación general impresionante, pero para dominios específicos como flood detection:
-- Zero-shot es un buen baseline (IoU=0.53) pero insuficiente para producción
-- Fine-tuning con solo 80 imágenes mejora +41% → eficiencia de transfer learning
-- Entrenar solo 4.3% de parámetros preserva generalización mientras especializa
-
-Foundation models son excelentes puntos de partida, pero la especialización es necesaria para aplicaciones críticas.
+SAM preentrenado en SA-1B tiene capacidad de segmentación general muy buena, pero para dominios específicos como flood detection es insuficiente. El fine-tuning con solo 80 imágenes logra una mejora de mas del 40% demostrando la eficiencia del transfer learning, y entrenar únicamente el 4.3% de los parámetros preserva la generalización mientras especializa el modelo. 
+Los foundation models son excelentes puntos de partida, pero la especialización es necesaria para aplicaciones críticas.
 
 ### 2. Prompts: Box > Point para Segmentación de Áreas Irregulares
 
@@ -180,11 +142,7 @@ Con solo 80 imágenes de entrenamiento logramos una mejora de mas del 40% sobre 
 
 ### 6. Combined Loss (BCE + Dice) es Efectivo
 
-La combinación 50/50 de BCE y Dice funcionó bien:
-- **BCE**: Optimiza clasificación pixel-wise
-- **Dice**: Optimiza overlap global
-
-**Resultado**: Balance entre precisión local y coherencia global de la máscara.
+La combinación 50/50 de BCE y Dice funcionó bien, donde BCE optimiza la clasificación pixel-wise y Dice optimiza el overlap global, resultando en un balance efectivo entre precisión local y coherencia global de la máscara.
 
 ---
 
@@ -209,8 +167,9 @@ Si tuviéramos muchas mas imágenes, podríamos considerar fine-tunear el encode
 Box prompts son superiores para este dominio. El contexto espacial del box ayuda a SAM a entender la extensión del área inundada.
 
 ### ¿Qué mejoras específicas observaste después del fine-tuning?
-Ahora captura bordes complejos del agua correctamente
-Detecta agua marrón/turbia que antes confundía con tierra
+
+- Ahora captura bordes complejos del agua correctamente
+- Detecta agua marrón/turbia que antes confundía con tierra
 
 ### ¿Este sistema está listo para deployment en un sistema de respuesta a desastres? ¿Qué falta?
 
@@ -222,11 +181,12 @@ Tambien faltarian fotos de casos bordes como fotos en la noche, con niebla o llu
 Ademas, agregaria testing con organizaciones que tengan experiencia en la respuesta a desastres, que puedan aydar a validar todo el contexto que esta alrededor del caso de uso, como POC esta bien.
 
 ### ¿Cómo cambiaría tu approach si tuvieras 10x más datos? ¿Y si tuvieras 10x menos?
+
 Haria fine-tuning de más componentes, y si tuviera menos, buscaria la forma de generar mas datos usando data augmentation, quizas reduciria mas el scope tambien, dependiendo de las imagenes que tenga, deberian ser al menos d algun tipo especifico de inundacion
 
 ### ¿Qué desafíos específicos presenta la segmentación de agua en inundaciones?
-desafios de todo tipo, desde que el agua se esparse de forma irregular, a que en algunos lugres puede ser mas transparente y en otras mas lodosas, dependiendo del contexto.
-son casos muy complicados de llevar a la practica porque necesitariamos muchisimos datos para poder cubrir la mayor cantindad posible de escenarios.
+
+Desafíos de todo tipo, desde que el agua se esparce de forma irregular, a que en algunos lugares puede ser más transparente y en otras más lodosas, dependiendo del contexto. Son casos muy complicados de llevar a la práctica porque necesitaríamos muchísimos datos para poder cubrir la mayor cantidad posible de escenarios.
 
 ---
 
@@ -243,6 +203,8 @@ son casos muy complicados de llevar a la practica porque necesitariamos muchisim
 - [Prompt Engineering for SAM](https://arxiv.org/abs/2306.17400)
 
 ### 🤖 Otros Modelos de Segmentación
+
+Modelos alternativos/complementarios para explorar:
 
 **SAM Variants:**
 - [MobileSAM](https://github.com/ChaoningZhang/MobileSAM) - SAM optimizado para dispositivos móviles
