@@ -213,26 +213,31 @@ Modelos alternativos/complementarios para explorar:
 ### 📊 Datasets Públicos Recomendados
 
 **Medical Imaging:**
+
 - [Medical Segmentation Decathlon](http://medicaldecathlon.com/) - 10 tareas médicas diferentes
 - [ISIC Skin Lesion](https://www.isic-archive.com/) - Detección de melanoma y lesiones cutáneas
 - [Chest X-Ray Segmentation](https://www.kaggle.com/datasets/nikhilpandey360/chest-xray-masks-and-labels) - Segmentación de pulmones en rayos X
 
 **Satellite & Aerial:**
+
 - [SpaceNet](https://spacenet.ai/) - Building footprints, roads y infraestructura
 - [DOTA](https://captain-whu.github.io/DOTA/) - Object detection en imágenes aéreas
 - [Aerial Semantic Segmentation](https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery) - Segmentación de imágenes aéreas
 
 **Industrial & Manufacturing:**
+
 - [MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad) - Defect detection en manufactura
 - [Steel Defect Detection](https://www.kaggle.com/c/severstal-steel-defect-detection) - Detección de defectos en acero
 - [PCB Defect Dataset](https://www.kaggle.com/datasets/akhatova/pcb-defects) - Defectos en placas de circuito impreso
 
 **Natural Images:**
+
 - [COCO-Stuff](https://github.com/nightrome/cocostuff) - 164K imágenes con scene segmentation
 - [ADE20K](https://groups.csail.mit.edu/vision/datasets/ADE20K/) - Scene parsing con 150 clases
 - [Cityscapes](https://www.cityscapes-dataset.com/) - Segmentación urbana para conducción autónoma
 
 **Domain-Specific:**
+
 - [Plant Disease Detection](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset) - Enfermedades en plantas
 - [Underwater Trash](https://www.kaggle.com/datasets/ashewale/underwater-trash-detection) - Detección de basura submarina
 - [Food Segmentation](https://www.kaggle.com/datasets/kmader/food41) - Segmentación de alimentos
