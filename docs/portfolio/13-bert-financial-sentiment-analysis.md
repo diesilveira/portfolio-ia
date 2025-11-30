@@ -21,6 +21,8 @@ El dataset contiene textos financieros etiquetados en tres clases:
 
 #### Análisis de N-grams y Ruido
 
+![Distribución de longitud de tokens](13-imagenes/token_length_distribution.png)
+
 Al analizar los n-grams más frecuentes, encontramos una presencia significativa de ruido. Términos como "co", "https" y "https co" dominan en todas las clases, lo que indica que las URLs y los tickers abreviados son muy comunes y podrían no aportar valor semántico directo para el sentimiento sin limpieza previa.
 
 #### Embeddings Estáticos (Word2Vec)
@@ -75,9 +77,13 @@ Los n-grams más frecuentes fueron consistentemente "co", "https", y combinacion
 
 ### ¿Qué sesgos/ruido ves en las nubes de palabras?
 
+![WordCloud Clase 2](13-imagenes/wordcloud_class_2.png)
+
 Las nubes de palabras (aunque visuales) confirmarían el predominio de términos de enlace que pueden aparecer en cualquier sentimiento. El ruido principal son las URLs y menciones de usuarios o tickers que no llevan carga de sentimiento *per se*.
 
 ### ¿Hay separabilidad en PCA/UMAP? Si no, ¿por qué?
+
+![UMAP sobre TF-IDF](13-imagenes/umap_tfidf.png)
 
 Se observa cierta agrupación, especialmente de la clase Neutral, pero hay un solapamiento considerable entre Bullish y Bearish en la proyección 2D de TF-IDF. Esto se debe a que comparten mucho vocabulario (e.g., "price", "target", "earnings") y la diferencia radica en el contexto o adjetivos específicos que TF-IDF no separa tan claramente como los embeddings contextuales.
 
