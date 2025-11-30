@@ -27,6 +27,8 @@ Fundamentos de Machine Learning: análisis exploratorio de datos, regresión lin
 
 ### [Mall Customer Analytics: usando PCA y clustering para entender comportamiento de compra](05-clustering-pca-mall-customers.md)
 
+![clientes](index-images/cluster.png)
+
 ## 🧠 Unidad Temática 2 - Redes Neuronales y Deep Learning
 
 Del perceptrón a redes multicapa (MLP): arquitecturas, backpropagation, optimizadores (SGD, Adam, RMSprop) y técnicas de regularización. Experimentación práctica con TensorBoard y callbacks.
