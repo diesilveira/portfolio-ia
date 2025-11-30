@@ -3,15 +3,18 @@ title: "Portfolio - Prácticas de ML"
 date: 2025-01-01
 ---
 
-# 🤖 Diego Silveira - Portfolio IA
+# 🤖 Portfolio
 
 ## 📊 Unidad Temática 1 - Machine Learning Clásico
 
 Fundamentos de Machine Learning: análisis exploratorio de datos, regresión lineal y logística, validación cruzada, y clustering con PCA. Desde predicción de supervivencia en Titanic hasta segmentación de clientes.
 
-### [Descifrando los secretos del Titanic a través de los datos](01-eda-titanic.md) 
+### [Descifrando los secretos del Titanic a través de los datos](01-eda-titanic.md)
+
+![Titanic](titanic.png)
 
 ### [De datos crudos a modelos predictivos: construyendo nuestro primer clasificador](02-baseline-logreg.md)  
+![Clasificador](clasificador.png)
 
 ### [Cuando las líneas rectas no bastan: explorando regresión lineal y logística](03-regresion-lineal-logistica.md)
 
