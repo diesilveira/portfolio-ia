@@ -7,7 +7,7 @@ date: 2025-01-01
 
 ## 📊 Unidad Temática 1 - Machine Learning Clásico
 
-En esta unidad exploramos los fundamentos del Machine Learning clásico, desde el análisis exploratorio de datos hasta técnicas avanzadas de validación y selección de modelos. Comenzamos con el dataset Titanic para entender cómo extraer insights de los datos, construimos nuestros primeros modelos predictivos con regresión logística, profundizamos en los conceptos matemáticos detrás de regresión lineal y logística, implementamos validación cruzada para evaluar modelos de forma robusta, y finalmente aplicamos técnicas de aprendizaje no supervisado como clustering y PCA para segmentación de clientes. Esta unidad establece las bases sólidas necesarias para abordar problemas más complejos de deep learning y visión por computadora.
+Fundamentos de Machine Learning: análisis exploratorio de datos, regresión lineal y logística, validación cruzada, y clustering con PCA. Desde predicción de supervivencia en Titanic hasta segmentación de clientes.
 
 #### 🔍 **Titanic: Análisis exploratorio de datos para descubrir patrones de supervivencia**
 - **[Descifrando los secretos del Titanic a través de los datos](01-eda-titanic.md)**
@@ -30,7 +30,7 @@ En esta unidad exploramos los fundamentos del Machine Learning clásico, desde e
 
 ## 🧠 Unidad Temática 2 - Redes Neuronales y Deep Learning
 
-En esta unidad damos el salto del Machine Learning clásico al Deep Learning, explorando los fundamentos de las redes neuronales artificiales. Comenzamos entendiendo la arquitectura básica del perceptrón y cómo las redes multicapa (MLP) pueden resolver problemas no linealmente separables como XOR. Luego profundizamos en el algoritmo de backpropagation que permite entrenar estas redes, experimentamos con diferentes optimizadores (SGD, Adam, RMSprop) y arquitecturas para comprender su impacto en el rendimiento, y aprendimos a usar callbacks y técnicas de regularización para evitar overfitting. Esta unidad nos prepara para abordar problemas más complejos de visión por computadora con redes convolucionales.
+Del perceptrón a redes multicapa (MLP): arquitecturas, backpropagation, optimizadores (SGD, Adam, RMSprop) y técnicas de regularización. Experimentación práctica con TensorBoard y callbacks.
 
 #### 🔗 **Redes Neuronales: del perceptrón simple al MLP**
 - **[Del perceptrón a las redes multicapa: resolviendo problemas no linealmente separables](06-redes-neuronales-perceptron.md)**
@@ -42,7 +42,7 @@ En esta unidad damos el salto del Machine Learning clásico al Deep Learning, ex
 
 ## 👁️ Unidad Temática 3 - Visión por Computadora
 
-En esta unidad nos adentramos en el fascinante mundo de la visión por computadora, aplicando deep learning a problemas de clasificación, detección y segmentación de imágenes. Comenzamos construyendo CNNs desde cero y comparándolas con modelos preentrenados mediante transfer learning, exploramos técnicas avanzadas de data augmentation (Mixup, CutMix) y explicabilidad con GradCAM para entender qué aprenden nuestros modelos, implementamos fine-tuning de YOLOv8 para detección de objetos específicos y tracking en video, y finalmente trabajamos con Segment Anything Model (SAM) para segmentación de áreas inundadas en disaster response. Esta unidad demuestra cómo los foundation models y el transfer learning permiten resolver problemas complejos del mundo real con recursos limitados.
+CNNs desde cero y transfer learning, data augmentation avanzado (Mixup, CutMix), explicabilidad con GradCAM, fine-tuning de YOLOv8 para detección y tracking, y segmentación con SAM para disaster response.
 
 #### 🖼️ **CNNs y Transfer Learning: de redes convolucionales a modelos preentrenados**
 - **[CNNs desde cero y aprovechando modelos preentrenados](09-cnn-transfer-learning.md)**
@@ -62,8 +62,10 @@ En esta unidad nos adentramos en el fascinante mundo de la visión por computado
 
 ## 🗣️ Unidad Temática 4 - Procesamiento de Lenguaje Natural (NLP)
 
-En esta unidad nos introducimos en el campo del Procesamiento de Lenguaje Natural, comparando técnicas clásicas con modelos de última generación basados en Transformers. Abordamos el análisis de sentimiento en noticias financieras, implementando primero un baseline con Bag of Words y Regresión Logística, para luego explorar el poder del Transfer Learning mediante el fine-tuning de BERT (FinBERT). Esta unidad nos permite entender la evolución del NLP y cómo los modelos preentrenados han revolucionado la capacidad de las máquinas para entender el lenguaje humano.
+Fine-tuning de BERT (FinBERT) para análisis de sentimiento financiero, y LangChain para aplicaciones LLM: prompting, salidas estructuradas con Pydantic, y RAG (Retrieval-Augmented Generation).
 
 #### 📈 **Sentiment Analysis con Transformers: FinBERT vs Baseline**
 - **[Análisis de sentimiento financiero: comparando TF-IDF vs Fine-tuning de BERT](13-bert-financial-sentiment-analysis.md)**
+
+#### [LangChain: Prompting, Plantillas y Salida Estructurada con OpenAI](14-langchain-llm-prompting.md)**
 
