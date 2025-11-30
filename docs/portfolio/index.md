@@ -19,9 +19,11 @@ Fundamentos de Machine Learning: análisis exploratorio de datos, regresión lin
 
 ### [Cuando las líneas rectas no bastan: explorando regresión lineal y logística](03-regresion-lineal-logistica.md)
 
-![Logistica](index-images/logistica)
+![Logistica](index-images/logistica.png)
 
-### [Evitando el sobreajuste: técnicas de validación para modelos robustos](04-validacion-seleccion-modelos.md)
+### [Evitando el sobreajuste: técnicas de validación para modelos robustos y evitar que los estudiantes dejen de asistir a clases](04-validacion-seleccion-modelos.md)
+
+![Estudiante](index-images/estudiantes.png)
 
 ### [Mall Customer Analytics: usando PCA y clustering para entender comportamiento de compra](05-clustering-pca-mall-customers.md)
 
