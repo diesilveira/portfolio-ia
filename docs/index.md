@@ -28,6 +28,7 @@ date: 2025-01-01
 Este portfolio documenta mi evolución en el curso de Machine Learning, incluyendo:
 
 ### 📊 **Machine Learning Clásico**
+
 - EDA del Titanic - Análisis exploratorio de datos
 - Feature Engineering + Modelo Base
 - Regresión Lineal y Logística
@@ -35,17 +36,20 @@ Este portfolio documenta mi evolución en el curso de Machine Learning, incluyen
 - Clustering y PCA
 
 ### 🧠 **Deep Learning**
-- Redes Neuronales: Perceptrón y MLP
-- PyTorch Lightning 
+
+- Redes Neuronales, Perceptrón y MLP
+- PyTorch Lightning
 - Optimización y regularización
 
 ### 📊 **Computer Vision (a futuro)**
+
 - CNN + transfer learning
 - Data augmentation
 - Detección de objetos
 - Segmentación
 
 ### 📊 **NLP y LLMs (a futuro)**
+
 - Tokenización
 - Transformers
 - Fine‑tuning/LoRA
@@ -53,6 +57,7 @@ Este portfolio documenta mi evolución en el curso de Machine Learning, incluyen
 - asistentes
 
 ### 📊 **MLOps y Proyecto Final (a futuro)**
+
 - MLflow
 - Docker
 - CI/CD
