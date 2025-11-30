@@ -13,3 +13,4 @@ nav:
   - "UT3 - TA10: Data Augmentation Avanzado & Explicabilidad": 10-data-augmentation-xai.md
   - "UT3 - TA11: YOLO Fine-tuning y Object Tracking": 11-yolo-finetuning-tracking.md
   - "UT3 - TA12: SAM Flood Segmentation": 12-sam-flood-segmentation.md
+  - "UT4 - TA13: BERT Financial Sentiment": 13-bert-financial-sentiment-analysis.md

@@ -59,3 +59,11 @@ En esta unidad nos adentramos en el fascinante mundo de la visión por computado
 #### 🌊 **SAM Flood Segmentation: detección de áreas inundadas con Segment Anything Model**
 - **[Segmentación de inundaciones con SAM: comparando zero-shot vs fine-tuned para disaster response](12-sam-flood-segmentation.md)**
 
+
+## 🗣️ Unidad Temática 4 - Procesamiento de Lenguaje Natural (NLP)
+
+En esta unidad nos introducimos en el campo del Procesamiento de Lenguaje Natural, comparando técnicas clásicas con modelos de última generación basados en Transformers. Abordamos el análisis de sentimiento en noticias financieras, implementando primero un baseline con Bag of Words y Regresión Logística, para luego explorar el poder del Transfer Learning mediante el fine-tuning de BERT (FinBERT). Esta unidad nos permite entender la evolución del NLP y cómo los modelos preentrenados han revolucionado la capacidad de las máquinas para entender el lenguaje humano.
+
+#### 📈 **Sentiment Analysis con Transformers: FinBERT vs Baseline**
+- **[Análisis de sentimiento financiero: comparando TF-IDF vs Fine-tuning de BERT](13-bert-financial-sentiment-analysis.md)**
+

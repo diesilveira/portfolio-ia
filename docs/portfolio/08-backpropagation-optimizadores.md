@@ -25,32 +25,10 @@ Esta tarea se centró en la experimentación sistemática con redes neuronales p
 
 ### Dataset: CIFAR-10
 
-```python
-(x_train, y_train), (x_test, y_test) = keras.datasets.cifar10.load_data()
-
-# Normalización a [-1, 1]
-x_train = (x_train.astype("float32")/255.0 - 0.5) * 2.0
-x_test  = (x_test.astype("float32")/255.0 - 0.5) * 2.0
-
-# Split: 45,000 train / 5,000 validation / 10,000 test
-# Aplanar imágenes: 32x32x3 -> 3072 dimensiones
-```
 
 **Clases**: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
 
 ### Parte 1: Experimentación con Arquitecturas
-
-#### Modelo Baseline
-
-```python
-model_baseline = keras.Sequential([
-    layers.Dense(32, activation='relu'),
-    layers.Dense(32, activation='relu'),
-    layers.Dense(10, activation='softmax')
-])
-```
-
-**Resultado**: Train Acc: 56.8% | Val Acc: 46.7% | Test Acc: 47.4%
 
 #### Comparación de Arquitecturas
 
@@ -248,10 +226,6 @@ TensorBoard es fundamental en deep learning porque permite:
 
 En nuestros experimentos, TensorBoard fue esencial para comparar los 25+ experimentos simultáneamente, permitiéndonos identificar que el modelo "Combined Callbacks" convergía mejor que los demás.
 
-**Comando para visualizar los logs**:
-```bash
-tensorboard --logdir tb_logs_experiments
-```
 
 ![Visualización de experimentos en TensorBoard](08-imagenes/tensorboard-experiments.png)
 
