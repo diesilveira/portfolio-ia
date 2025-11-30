@@ -17,9 +17,10 @@ El dataset utilizado es `zeroshot/twitter-financial-news-sentiment`, que contien
 ### Parte 1: Exploración del Dataset y Preprocesamiento
 
 El dataset contiene textos financieros etiquetados en tres clases:
-**0: Bearish** (Bajista)
-**1: Bullish** (Alcista)
-**2: Neutral**
+
+- 0: Bearish (Bajista)
+- 1: Bullish (Alcista)
+- 2: Neutral
 
 #### Análisis de N-grams y Ruido
 
@@ -30,8 +31,10 @@ Al analizar los n-grams más frecuentes, encontramos una presencia significativa
 #### Embeddings Estáticos (Word2Vec)
 
 Entrenamos un modelo Word2Vec rápido para ver relaciones semánticas. Los resultados muestran coherencia con el dominio financiero:
-Vecinos de **"price"**: *cut, stock, raised, at, from, target*.
-Vecinos de **"market"**: *back, set, stocks*.
+
+- Vecinos de "price": *cut, stock, raised, at, from, target*.
+- Vecinos de "market": *back, set, stocks*.
+
 Esto sugiere que incluso embeddings simples capturan bien el contexto financiero.
 
 ### Parte 2: Baseline (TF-IDF + Logistic Regression)
@@ -39,10 +42,11 @@ Esto sugiere que incluso embeddings simples capturan bien el contexto financiero
 Como punto de partida, utilizamos un vectorizador TF-IDF (max features=30000) y una Regresión Logística.
 
 **Resultados del Baseline:**
-**Accuracy**: ~80%
-**F1-score (macro)**: ~0.68
 
-La matriz de confusión revela que el baseline tiene un sesgo fuerte hacia la clase mayoritaria (**Neutral**), con un recall muy alto (0.97) para esta clase, pero falla significativamente en las clases más importantes para la toma de decisiones: **Bearish** (recall 0.39) y **Bullish** (recall 0.54).
+- Accuracy: ~80%
+- F1-score: ~0.68
+
+La matriz de confusión revela que el baseline tiene un sesgo fuerte hacia la clase mayoritaria (Neutral), con un recall muy alto (0.97) para esta clase, pero falla significativamente en las clases más importantes para la toma de decisiones: Bearish (recall 0.39) y Bullish (recall 0.54).
 
 ### Parte 3: Fine-tuning con FinBERT
 
@@ -52,8 +56,8 @@ Para el proceso de fine-tuning, seleccionamos el modelo `ProsusAI/finbert`, el c
 
 | Métrica | Baseline (TF-IDF + LR) | Transformer (FinBERT) | Mejora |
 |:-------:|:----------------------:|:---------------------:|:------:|
-| **Accuracy** | 0.796 | **0.877** | **+8.1%** |
-| **F1-Score** | 0.683 | **0.839** | **+15.6%** |
+| **Accuracy** | 0.796 | 0.877 | +8.1% |
+| **F1-Score** | 0.683 | 0.839 | +15.6% |
 
 El modelo Transformer supera ampliamente al baseline, especialmente en el F1-Score, lo que indica un mejor balance entre precision y recall y, crucialmente, un mejor desempeño en las clases minoritarias (Bearish/Bullish) que son las más difíciles para el baseline.
 
@@ -81,7 +85,7 @@ Los n-grams más frecuentes fueron consistentemente "co", "https", y combinacion
 
 ![WordCloud Clase 2](13-imagenes/wordcloud_class_2.png)
 
-Las nubes de palabras (aunque visuales) confirmarían el predominio de términos de enlace que pueden aparecer en cualquier sentimiento. El ruido principal son las URLs y menciones de usuarios o tickers que no llevan carga de sentimiento *per se*.
+Las nubes de palabras (aunque visuales) confirmarían el predominio de términos de enlace que pueden aparecer en cualquier sentimiento. El ruido principal son las URLs y menciones de usuarios o tickers que no llevan carga de sentimiento.
 
 ### ¿Hay separabilidad en PCA/UMAP? Si no, ¿por qué?
 
