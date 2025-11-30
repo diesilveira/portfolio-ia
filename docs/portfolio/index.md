@@ -35,7 +35,11 @@ Del perceptrón a redes multicapa (MLP): arquitecturas, backpropagation, optimiz
 
 ### [Del perceptrón a las redes multicapa: resolviendo problemas no linealmente separables](06-redes-neuronales-perceptron.md)
 
+![redes](index-images/redes.png)
+
 ### [Experimentacion con redes neuronales: arquitecturas, optimizadores y callbacks](08-backpropagation-optimizadores.md)
+
+![cientifico](index-images/cientifico.png)
 
 ## 👁️ Unidad Temática 3 - Visión por Computadora
 
@@ -45,9 +49,15 @@ CNNs desde cero y transfer learning, data augmentation avanzado (Mixup, CutMix),
 
 ### [Técnicas avanzadas de augmentation (Mixup, CutMix) y visualización de decisiones con GradCAM](10-data-augmentation-xai.md)
 
-### [Fine-tuning de YOLOv8 para detección específica de productos y tracking en video](11-yolo-finetuning-tracking.md)
+![gatitos](index-images/augmentation.png)
+
+### [Fine-tuning de YOLOv8 para detección específica de productos de supermercado y tracking en video](11-yolo-finetuning-tracking.md)
+
+![frutas](index-images/frutas.png)
 
 ### [Segmentación de inundaciones con SAM: comparando zero-shot vs fine-tuned para disaster response](12-sam-flood-segmentation.md)
+
+![inundacion](index-images/inundaciones.png)
 
 ## 🗣️ Unidad Temática 4 - Procesamiento de Lenguaje Natural (NLP)
 
@@ -55,4 +65,8 @@ Fine-tuning de BERT (FinBERT) para análisis de sentimiento financiero, y LangCh
 
 ### [Análisis de sentimiento financiero: comparando TF-IDF vs Fine-tuning de BERT](13-bert-financial-sentiment-analysis.md)
 
+![dinero](index-images/dinero.png)
+
 ### [LLMs con LangChain: Prompting, Plantillas y Salida Estructurada con OpenAI](14-langchain-llm-prompting.md)
+
+![bot](index-images/bot.png)
