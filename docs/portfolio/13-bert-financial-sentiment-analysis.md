@@ -4,6 +4,8 @@
 
 En esta tarea abordamos el análisis de sentimiento en noticias financieras utilizando **Transformers**, específicamente haciendo fine-tuning de un modelo **BERT** pre-entrenado en el dominio financiero (FinBERT). El objetivo principal es comparar el rendimiento de técnicas clásicas de NLP (Bag of Words + Regresión Logística) frente a modelos de lenguaje modernos basados en atención.
 
+![FinBERT Logo](13-imagenes/finbert_logo.png)
+
 ### Metodología
 
 La metodología aplicada comenzó con una exploración de los datos (EDA) utilizando análisis de n-grams y técnicas de reducción de dimensionalidad como PCA y UMAP para comprender la distribución de las clases. Posteriormente, se estableció una línea base mediante un modelo clásico de TF-IDF con Regresión Logística, para luego proceder al fine-tuning del modelo `ProsusAI/finbert` especializado en finanzas. Finalmente, se evaluó el desempeño de ambos enfoques comparando métricas clave como Accuracy y F1-score, junto con un análisis detallado de las matrices de confusión.
@@ -111,3 +113,6 @@ Para un sistema de análisis de sentimiento financiero donde la precisión es di
 
 Como pasos futuros para mejorar el sistema, se podría implementar una limpieza de datos más exhaustiva, eliminando URLs y normalizando tickers para reducir el ruido. Tambien, se podría explorar el uso de técnicas de Ensemble combinando predicciones de múltiples modelos, como RoBERTa y FinBERT, para robustecer los resultados.
 
+## Conclusión
+
+Esta práctica demuestra la superioridad de los modelos de lenguaje pre-entrenados en dominio específico (FinBERT) sobre enfoques tradicionales (TF-IDF) para tareas complejas como el análisis de sentimiento financiero. A pesar del mayor costo computacional, la capacidad del Transformer para capturar el contexto y matices del lenguaje financiero justifica su uso, especialmente en aplicaciones críticas donde la precisión en la detección de señales de mercado es fundamental.
