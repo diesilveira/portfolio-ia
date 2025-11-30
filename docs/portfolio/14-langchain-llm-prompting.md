@@ -18,15 +18,7 @@ El modelo respondió con precisión técnica, capturando los conceptos clave (at
 
 ### Parte 2: Experimentación con Temperature
 
-La experimentación con diferentes valores de `temperature` (0.0, 0.5, 0.9) reveló patrones claros en el comportamiento del modelo:
-
-| Temperature | Características |
-|-------------|-----------------|
-| 0.0 | Determinista, consistente, repetible |
-| 0.5 | Balance entre creatividad y coherencia |
-| 0.9 | Alta variabilidad, creatividad máxima |
-
-Con `temperature=0.0`, el modelo generó respuestas casi idénticas en múltiples ejecuciones. Con valores más altos, las respuestas mantuvieron la corrección pero variaron en estilo y estructura.
+Con `temperature=0.0`, el modelo generó respuestas casi idénticas en múltiples ejecuciones, siendo determinista, consistente y repetible. Con `temperature=0.5` se observó un balance entre creatividad y coherencia, mientras que con `temperature=0.9` se obtuvo alta variabilidad y creatividad máxima.
 
 ### Parte 3: Salida Estructurada con Pydantic
 
