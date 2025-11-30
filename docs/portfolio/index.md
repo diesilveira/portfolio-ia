@@ -11,12 +11,15 @@ Fundamentos de Machine Learning: análisis exploratorio de datos, regresión lin
 
 ### [Descifrando los secretos del Titanic a través de los datos](01-eda-titanic.md)
 
-![Titanic](titanic.png)
+![Titanic](index-images/titanic.png)
 
-### [De datos crudos a modelos predictivos: construyendo nuestro primer clasificador](02-baseline-logreg.md)  
-![Clasificador](clasificador.png)
+### [De datos crudos a modelos predictivos: construyendo nuestro primer clasificador](02-baseline-logreg.md)
+
+![Clasificador](index-images/clasificador.png)
 
 ### [Cuando las líneas rectas no bastan: explorando regresión lineal y logística](03-regresion-lineal-logistica.md)
+
+![Logistica](index-images/logistica)
 
 ### [Evitando el sobreajuste: técnicas de validación para modelos robustos](04-validacion-seleccion-modelos.md)
 
