@@ -47,6 +47,8 @@ CNNs desde cero y transfer learning, data augmentation avanzado (Mixup, CutMix),
 
 ### [CNNs desde cero y aprovechando modelos preentrenados](09-cnn-transfer-learning.md)
 
+![cnn](index-images/cnn.png)
+
 ### [Técnicas avanzadas de augmentation (Mixup, CutMix) y visualización de decisiones con GradCAM](10-data-augmentation-xai.md)
 
 ![gatitos](index-images/augmentation.png)
