@@ -10,7 +10,7 @@ La metodología consistió en una construcción incremental hasta un sistema com
 
 El siguiente paso fue integrar **RAG como tool reutilizable**, creando un vector store FAISS con embeddings de OpenAI sobre un conocimiento específico (Federación Uruguaya de Ajedrez). Implementamos múltiples tools incluyendo `rag_search` para búsqueda semántica, `get_order_status` para consultas de pedidos ficticios, y `get_utc_time` para obtener la hora actual.
 
-La orquestación se logró mediante un grafo con flujo condicional: `assistant` → `route_from_assistant` → (`tools` → `memory` → `assistant`) | `END`, permitiendo que el agente decida autónomamente cuándo usar herramientas basándose en el contexto. Agregamos un nodo `memory` que genera resúmenes incrementales de la conversación, actualizándose después de cada uso de tools para mantener contexto sin acumular todo el historial. Finalmente, armamos el bot completo en una interfaz **Gradio** con chat interactivo, visualización de tools utilizados, y gestión de estado persistente entre turnos.
+La orquestación se logró mediante un grafo con flujo condicional, permitiendo que el agente decida autónomamente cuándo usar herramientas basándose en el contexto. Agregamos un nodo `memory` que genera resúmenes incrementales de la conversación, actualizándose después de cada uso de tools para mantener contexto sin acumular todo el historial. Finalmente, armamos el bot completo en una interfaz **Gradio** con chat interactivo, visualización de tools utilizados, y gestión de estado persistente entre turnos.
 
 Durante toda la práctica utilizamos `gpt-5-mini` y `gpt-5-nano` de OpenAI, con LangSmith habilitado para tracing y observabilidad de las ejecuciones del grafo.
 
