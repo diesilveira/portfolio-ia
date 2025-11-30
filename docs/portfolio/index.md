@@ -72,3 +72,7 @@ Fine-tuning de BERT (FinBERT) para análisis de sentimiento financiero, y LangCh
 ### [LLMs con LangChain: Prompting, Plantillas y Salida Estructurada con OpenAI](14-langchain-llm-prompting.md)
 
 ![bot](index-images/bot.png)
+
+### [Creando un bot que responde preguntas de ajedrez con manejo de estado, tools, RAG y multi-turn](15-langgraph-agents-rag-tools.md)
+
+![bot-ajedrez](index-images/bot-ajedrez.png)
