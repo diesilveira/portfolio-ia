@@ -32,3 +32,5 @@ Explora las diferentes secciones de mi portfolio:
 - **[Portfolio](portfolio/index.md)**
 
 - **[Material Teórico](material-teorico.md)**
+
+- **[Rescuros](recursos.md)**

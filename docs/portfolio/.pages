@@ -4,7 +4,7 @@ nav:
   - Inicio: index.md
   - "EDA Titanic": 01-eda-titanic.md
   - "Baseline + LogReg": 02-baseline-logreg.md
-  - "egresión Lineal y Logística": 03-regresion-lineal-logistica.md
+  - "Regresión Lineal y Logística": 03-regresion-lineal-logistica.md
   - "Validación y Selección": 04-validacion-seleccion-modelos.md
   - "Clustering y PCA": 05-clustering-pca-mall-customers.md
   - "Redes Neuronales y Perceptrón": 06-redes-neuronales-perceptron.md
