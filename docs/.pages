@@ -1,10 +1,6 @@
 nav:
-  - Inicio: index.md
-  - Acerca de mí: acerca.md
-  - Portfolio: portfolio/
-  - Recursos: recursos.md
-arrange:
   - index.md
-  - portfolio
-  - recursos.md
   - acerca.md
+  - portfolio
+  - material-teorico.md
+  - recursos.md
