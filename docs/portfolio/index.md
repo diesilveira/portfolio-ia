@@ -55,7 +55,7 @@ CNNs desde cero y transfer learning, data augmentation avanzado (Mixup, CutMix),
 
 ### [Fine-tuning de YOLOv8 para detección específica de productos de supermercado y tracking en video](11-yolo-finetuning-tracking.md)
 
-![frutas](index-images/frutas.png)
+![frutas](index-images/frutas2.png)
 
 ### [Segmentación de inundaciones con SAM: comparando zero-shot vs fine-tuned para disaster response](12-sam-flood-segmentation.md)
 
