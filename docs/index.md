@@ -1,5 +1,5 @@
 ---
-title: "Diego Silveira - Portfolio IA"
+title: "Inicio"
 date: 2025-01-01
 ---
 <div style="display: flex; align-items: center; margin-bottom: 2rem; gap: 2rem;">
@@ -27,7 +27,7 @@ date: 2025-01-01
 
 Explora las diferentes secciones de mi portfolio:
 
-- **[Sobre Mí](acerca.md)**
+- **[Acerca de Mí](acerca.md)**
 
 - **[Portfolio](portfolio/index.md)**
 

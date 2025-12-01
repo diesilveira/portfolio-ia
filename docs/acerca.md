@@ -3,8 +3,6 @@ title: "Acerca de mí"
 date: 2025-01-01
 ---
 
-## Acerca de mí
-
 Estudiante avanzado de la Universidad Católica del Uruguay, Sr Software Engineer en MercadoLibre, soy un apasionado por la tecnología y la inteligencia artificial. Este portfolio documenta mi aprendizaje en el curso **"Fundamentos del Aprendizaje Automático"**, explorando desde conceptos básicos hasta implementaciones prácticas de algoritmos de ML.
 
 ## 💻 Habilidades Técnicas

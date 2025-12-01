@@ -1,5 +1,5 @@
 ---
-title: "Recursos del Curso"
+title: "Recursos"
 date: 2025-01-01
 ---
 
