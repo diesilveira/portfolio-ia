@@ -27,19 +27,8 @@ date: 2025-01-01
 
 Explora las diferentes secciones de mi portfolio:
 
-<div class="grid cards" markdown>
+- **[Sobre Mí](acerca.md)**
 
--   :material-account: **[Sobre Mí](acerca.md)**
-    
-    Conoce más sobre mi trayectoria, intereses y experiencia profesional.
+- **[Portfolio](portfolio/index.md)**
 
--   :material-folder-open: **[Portfolio](portfolio/index.md)**
-    
-    Accede a la colección completa de trabajos prácticos y proyectos desarrollados.
-
--   :material-presentation: **[Material Teórico](material-teorico.md)**
-    
-    Consulta las slides y recursos teóricos de las clases.
-
-</div>
-
+- **[Material Teórico](material-teorico.md)**
