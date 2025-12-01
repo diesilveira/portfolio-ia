@@ -65,3 +65,5 @@ markdown_extensions:
   - pymdownx.emoji
   - pymdownx.tasklist:
       custom_checkbox: true
+  - md_in_html
+

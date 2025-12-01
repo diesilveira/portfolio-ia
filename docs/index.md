@@ -25,50 +25,21 @@ date: 2025-01-01
 
 ## 🎯 ¿Qué encontrarás aquí?
 
-Este portfolio documenta mi evolución en el curso de Machine Learning, incluyendo:
+Explora las diferentes secciones de mi portfolio:
 
-### 📊 **Machine Learning Clásico**
+<div class="grid cards" markdown>
 
-- EDA del Titanic - Análisis exploratorio de datos
-- Feature Engineering + Modelo Base
-- Regresión Lineal y Logística
-- Validación y Selección de Modelos
-- Clustering y PCA
+-   :material-account: **[Sobre Mí](acerca.md)**
+    
+    Conoce más sobre mi trayectoria, intereses y experiencia profesional.
 
-### 🧠 **Deep Learning**
+-   :material-folder-open: **[Portfolio](portfolio/index.md)**
+    
+    Accede a la colección completa de trabajos prácticos y proyectos desarrollados.
 
-- Redes Neuronales, Perceptrón y MLP
-- PyTorch Lightning
-- Optimización y regularización
+-   :material-presentation: **[Material Teórico](material-teorico.md)**
+    
+    Consulta las slides y recursos teóricos de las clases.
 
-### 📊 **Computer Vision (a futuro)**
+</div>
 
-- CNN + transfer learning
-- Data augmentation
-- Detección de objetos
-- Segmentación
-
-### 📊 **NLP y LLMs (a futuro)**
-
-- Tokenización
-- Transformers
-- Fine‑tuning/LoRA
-- RAG
-- asistentes
-
-### 📊 **MLOps y Proyecto Final (a futuro)**
-
-- MLflow
-- Docker
-- CI/CD
-- Despliegue y defensa final
-
-## 🎓 Filosofía de Aprendizaje
-
-> *"En Machine Learning, la comprensión profunda de los fundamentos es más valiosa que conocer muchas técnicas superficialmente"*
-
-Mi enfoque se centra en entender **el por qué** detrás de cada algoritmo, implementar desde fundamentos cuando es posible, y siempre validar resultados de manera rigurosa.
-
----
-
-**Universidad Católica del Uruguay** | **Fundamentos del Aprendizaje Automático** | [LinkedIn](https://www.linkedin.com/in/diego-silveira-uy/)
