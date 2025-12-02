@@ -110,13 +110,25 @@ Las CNNs preservan la estructura espacial manteniendo la relación entre píxele
 
 ### 2. El Problema del Transfer Learning en CIFAR-10
 
-Sorprendentemente, el transfer learning no funcionó bien en este caso (51.09% vs 69.37% de CNN simple). Las razones del bajo rendimiento incluyen mismatch de resolución donde ImageNet usa imágenes de 224×224 píxeles mientras CIFAR-10 solo 32×32 y los filtros aprendidos para imágenes grandes no se adaptan bien a imágenes tan pequeñas.
+Sorprendentemente, el transfer learning mostró resultados peores que una CNN simple (51.09% vs 69.37%). Este resultado aparentemente contradictorio se explica por errores en la implementación:
 
-Transfer learning funciona bien cuando el dataset objetivo es similar al dataset de preentrenamiento y las imágenes tienen resolución similar. No funciona bien cuando hay gran diferencia de resolución o los dominios son muy diferentes.
+#### Causas del Bajo Rendimiento
 
-### 3. Estrategias para Mejorar el Transfer Learning
+**A. Preprocesamiento Incorrecto** ⚠️
 
-Para mejorar los resultados de transfer learning en CIFAR-10, se podrían aplicar mejoras de entrenamiento como fine-tuning gradual descongelando capas progresivamente, learning rate scheduling reduciendo el learning rate durante el entrenamiento, y entrenar por más épocas (30-50 en lugar de 5-10).
+El error más grave: se normalizaron todas las imágenes a [0,1] mediante `x/255.0`, pero MobileNetV2 espera imágenes en rango [-1, 1]
+
+Cuando el modelo recibe datos en un rango diferente al que vio durante su entrenamiento en ImageNet, los features extraídos por las capas convolucionales son incorrectos, anulando el beneficio del transfer learning.
+**B. Mismatch de Resolución**
+
+- ImageNet: imágenes de **224×224** píxeles
+- CIFAR-10: imágenes de **32×32** píxeles (7× más pequeñas por lado)
+
+Los filtros convolucionales entrenados en imágenes grandes no se adaptan bien a imágenes tan pequeñas. Por ejemplo, un filtro 7×7 en una imagen 224×224 captura detalles locales, pero en 32×32 cubre gran parte de la imagen completa.
+**C. Configuración Subóptima**
+
+- Aumentar el numero de epocas a 20-30
+- Se podria usar alguna tecnica de data augmentation
 
 ### 4. Comparación de Modelos Preentrenados
 
