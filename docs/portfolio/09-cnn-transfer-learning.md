@@ -144,7 +144,7 @@ Sin embargo, al corregir el preprocesamiento utilizando las funciones específic
 
 ### 3. Comparación de Modelos Preentrenados
 
-![Comparación de arquitecturas preentrenadas](09-imagenes/model-comparison.png)
+![Comparación de arquitecturas preentrenadas](09-imagenes/model-comparison-2.png)
 
 *Con preprocesamiento correcto: ResNet50 lidera con 66%, seguido de ResNet101 y ResNet152. Los modelos VGG muestran buen rendimiento considerando su simplicidad. EfficientNetB0 destaca por su eficiencia (130 acc/M params).*
 
