@@ -76,3 +76,9 @@ Fine-tuning de BERT (FinBERT) para análisis de sentimiento financiero, y LangCh
 ### [Creando un bot que responde preguntas de ajedrez con manejo de estado, tools, RAG y multi-turn](15-langgraph-agents-rag-tools.md)
 
 ![bot-ajedrez](index-images/bot-ajedrez.png)
+
+## 🗣️ Unidad Temática 5 - MLOps
+
+### [Lab de Google, para aprender a usar VertezAI](15-langgraph-agents-rag-tools.md)
+
+![vertex](index-images/vertex.png)
