@@ -17,7 +17,7 @@ El primer paso consistió en instalar las librerías necesarias: el Kubeflow Pip
 Creación de un pipeline sencilo de 3 componentes:
 Construí un pipeline simple de tres componentes. Comencé creando componentes personalizados usando decoradores `@component`, donde cada componente toma inputs y produce outputs específicos. Luego conecté estos componentes en un pipeline usando el decorador `@dsl.pipeline`. Una vez definido el pipeline, lo compilé a formato JSON, lo ejecuté en Vertex AI Pipelines y monitoreé su progreso, visualizando los resultados finales en la consola de Google Cloud.
 
-![Pipeline inicial](16-imagenes/pipeline1.png)
+![Pipeline inicial](16-imagenes/pipeline1-1.png)
 
 Construcción de un pipeline ML end-to-end**
 

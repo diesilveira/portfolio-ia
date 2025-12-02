@@ -16,3 +16,4 @@ nav:
   - "BERT Financial Sentiment": 13-bert-financial-sentiment-analysis.md
   - "LLMs con LangChain": 14-langchain-llm-prompting.md
   - "Agentes Inteligentes con LangGraph": 15-langgraph-agents-rag-tools.md
+  - "VertexAI": 16-vertex-ai-course.md

@@ -79,6 +79,6 @@ Fine-tuning de BERT (FinBERT) para análisis de sentimiento financiero, y LangCh
 
 ## 🗣️ Unidad Temática 5 - MLOps
 
-### [Lab de Google, para aprender a usar VertezAI](15-langgraph-agents-rag-tools.md)
+### [Lab de Google, para aprender a usar VertexAI](16-vertex-ai-course.md)
 
 ![vertex](index-images/vertex.png)
