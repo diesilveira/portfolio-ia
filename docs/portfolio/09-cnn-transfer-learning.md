@@ -101,9 +101,11 @@ Se evaluaron **9 modelos diferentes** de Keras Applications con el preprocesamie
 
 *Eficiencia = Test Accuracy / Millones de parámetros
 
-![Comparación de arquitecturas preentrenadas](09-imagenes/model-comparison-sin-pre.png)
+Sin preprocesamiento:
+![Comparación de arquitecturas](09-imagenes/model-comparison-sin-pre.png)
 
-![Comparación de arquitecturas preentrenadas](09-imagenes/model-comparison.png)
+Con preprocesamiento:
+![Comparación de arquitecturas preentrenadas](09-imagenes/model-comparison-2.png)
 
 *Comparación visual de 9 arquitecturas preentrenadas CON preprocesamiento correcto. La mejora es tremenda: ResNet50 pasa de ~27% a 66%, casi triplicando su accuracy. Esto demuestra el impacto CRÍTICO del preprocesamiento en transfer learning.*
 
